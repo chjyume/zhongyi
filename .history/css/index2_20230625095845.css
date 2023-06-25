@@ -19,14 +19,12 @@
     animation: bubble 2s linear 0s 1 normal forwards;
   }
   #text2{
-    margin-top: calc(2%);
-    margin-left: calc(4%);
+    margin-top: calc(3%);
     animation: bubble 2s linear 1.5s 1 normal forwards;
   }
   #text3{
-    margin-top: calc(5%);
-    margin-left: calc(2%);
-    animation: bubble 2s linear 4s 1 normal forwards;
+    margin-top: calc(3%);
+    animation: bubble 2s linear 3s 1 normal forwards;
   }
 
   @keyframes bubble {

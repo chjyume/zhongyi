@@ -11,8 +11,8 @@
     height: 150px;
     background-color: lightblue;
     border: 1px solid black;
-    -webkit-animation: mymove 5s; /* Chrome, Safari, Opera */
-    animation: mymove 5s;
+    -webkit-animation: mymove 5s infinite; /* Chrome, Safari, Opera */
+    animation: mymove 5s infinite;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -29,12 +29,12 @@
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
-    100% {opacity: 0;}
+    50% {opacity: 0;}
 }
 
 /* Standard syntax */
 @keyframes mymove {
-    100% {opacity: 0;}
+    50% {opacity: 0;}
 }
 </style>
 </head>

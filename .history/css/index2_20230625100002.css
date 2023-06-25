@@ -26,7 +26,7 @@
   #text3{
     margin-top: calc(5%);
     margin-left: calc(2%);
-    animation: bubble 2s linear 4s 1 normal forwards;
+    animation: bubble 2s linear 3s 1 normal forwards;
   }
 
   @keyframes bubble {
