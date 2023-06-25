@@ -81,17 +81,17 @@
   #text2{
     margin-top: calc(3%);
     margin-left: calc(4%);
-    animation: bubble 2s linear 1.5s 1 normal forwards;
+    animation: bubble 2s linear 1s 1 normal forwards;
   }
   #text3{
     margin-top: calc(-14%);
     margin-right: calc(2%);
-    animation: bubble 2s linear 1s 1 normal forwards;
+    animation: bubble 2s linear 0.5s 1 normal forwards;
   }
   #text4{
     margin-top: calc(3%);
     margin-right: calc(3%);
-    animation: bubble 2s linear 2s 1 normal forwards;
+    animation: bubble 2s linear 1.5s 1 normal forwards;
   }
 
   @keyframes bubble {
