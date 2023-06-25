@@ -85,7 +85,7 @@
     animation: bubble 2s linear 1.5s 1 normal forwards;
   }
   #text3{
-    margin-top: calc(-30%);
+    margin-bottom: calc(40%);
     margin-right: calc(2%);
     animation: bubble 2s linear 1s 1 normal forwards;
   }
