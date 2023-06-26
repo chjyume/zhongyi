@@ -135,7 +135,6 @@
 
   #man:has(>#text5:focus){
     animation: man 2s linear 0s 1 normal forwards;
-   
   }
 
 @keyframes rebubble {
@@ -158,12 +157,12 @@
 
 /* AI机器人部分 */
 #robot{
-  width: 13%;
-  position: fixed;
-  top: calc(65%);
-  left: calc(15%);
+  width: 10%;
+  flex: auto;
+  position: relative;
+  top: calc(80%);
+  left: calc(10%);
   z-index: 1;
-  opacity: 0;
 }
 
 .bubble3 {
@@ -173,12 +172,11 @@
   font-size: 45px;
   line-height: 40px;
   top: 150px;
-  left: calc(30%);
-  color: #122648;
+  left: calc(35%);
+  color: #e1ab6e;
   background: #c2d9e9;
   border: 1px solid #3fffef;
   border-radius: 10px;
-  opacity: 0;
 }
 
 .bubble3::before,
@@ -201,9 +199,3 @@
   top:25px;
   border-color: #c2d9e9 #c2d9e9 transparent transparent;
 }
-
-@keyframes robot {
-  100% {
-    opacity: 1;
-  }
-  }
