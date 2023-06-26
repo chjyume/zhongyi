@@ -116,41 +116,18 @@
 .bubble2:hover{
   cursor:pointer;
 }
-
-#text1:focus{
-  animation: rebubble 3s ease-out 0s 1 normal forwards;
+.bubble1:focus{
+  animation: bubble 1.5s linear 0s 1 reverse forwards;
+  animation: bubble 2s linear 2.5s 1 normal forwards;
 }
 
-#text2:focus{
-  animation: rebubble 3s ease-out 0s 1 normal forwards;
-}
 
-#text3:focus{
-  animation: rebubble 3s ease-out 0s 1 normal forwards;
+/* 
+.man{
+  animation: man 1s linear 20s 1 normal forwards;
 }
-
-#text4:focus{
-  animation: rebubble 3s ease-out 0s 1 normal forwards;
-}
-
-  #man:has(>#text5:focus){
-    animation: man 2s linear 0s 1 normal forwards;
-  }
-
-@keyframes rebubble {
-  0% {
-    opacity: 1;
-}
-50% {
-  opacity: 0;
-}
-100%{
-  opacity: 1;
-}
-}
-
 @keyframes man {
 100% {
   opacity: 0;
 }
-}
+} */

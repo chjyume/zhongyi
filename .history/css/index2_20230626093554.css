@@ -133,7 +133,7 @@
   animation: rebubble 3s ease-out 0s 1 normal forwards;
 }
 
-  #man:has(>#text5:focus){
+  #text5:has(>#man:focus){
     animation: man 2s linear 0s 1 normal forwards;
   }
 

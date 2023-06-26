@@ -121,21 +121,9 @@
   animation: rebubble 3s ease-out 0s 1 normal forwards;
 }
 
-#text2:focus{
+#text:focus{
   animation: rebubble 3s ease-out 0s 1 normal forwards;
 }
-
-#text3:focus{
-  animation: rebubble 3s ease-out 0s 1 normal forwards;
-}
-
-#text4:focus{
-  animation: rebubble 3s ease-out 0s 1 normal forwards;
-}
-
-  #man:has(>#text5:focus){
-    animation: man 2s linear 0s 1 normal forwards;
-  }
 
 @keyframes rebubble {
   0% {
@@ -149,8 +137,12 @@
 }
 }
 
+/* 
+.man{
+  animation: man 1s linear 20s 1 normal forwards;
+}
 @keyframes man {
 100% {
   opacity: 0;
 }
-}
+} */
