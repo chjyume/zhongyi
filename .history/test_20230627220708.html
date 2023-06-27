@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* 设置字体样式和初始隐藏 */
+      .hidden-text {
+        font-family: Arial, sans-serif;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="textContainer">
+      <span class="hidden-text">这是一个测试文本。</span>
+    </div>
+
+    <button onclick="showAllText()">显示全部</button>
+
+    <script>
+      const textContainer = document.getElementById('textContainer');
+      const hiddenText = textContainer.querySelector('.hidden-text');
+      const textContent = hiddenText.textContent;
+
+      let currentIndex = 0;
+      let showAll = false;
+
+      // 逐字显示
+      function showText() {
+        if (currentIndex <= textContent.length && !showAll) {
+          hiddenText.style.visibility = 'visible';
+          hiddenText.style.opacity = '1';
+          hiddenText.textContent = textContent.slice(0, currentIndex++);
+          setTimeout(showText, 100);
+        }
+      }
+
+      // 点击按钮显示全部文字
+      function showAllText() {
+        if (!showAll) {
+          hiddenText.textContent = textContent;
+          showAll = true;
+        }
+      }
+
+      showText();
+    </script>
+  </body>
+</html>
+        
