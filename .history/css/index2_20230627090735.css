@@ -5,6 +5,7 @@
     font-family:HYLeMiaoTi; 
     font-size: 45px;
     line-height: 40px;
+    top: calc(10%);
     left: calc(65%);
     color: #c0e3ff;
     background: #122648;
@@ -42,6 +43,7 @@
     font-family:HYLeMiaoTi; 
     font-size: 45px;
     line-height: 40px;
+    top: calc(10%);
     left: calc(16%);
     color: #c0e3ff;
     background: #122648;
@@ -74,26 +76,26 @@
 
 
   #text1{
-    top: calc(8%);
+    margin-top: calc(2%);
     animation: bubble 2s linear 0s 1 normal forwards;
   }
   #text2{
-    top: calc(25%);
+    margin-top: calc(10%);
     margin-left: calc(4%);
     animation: bubble 2s linear 1.5s 1 normal forwards;
   }
   #text3{
-    top: calc(13%);
+    margin-top: calc(15%);
     margin-right: calc(2%);
     animation: bubble 2s linear 1s 1 normal forwards;
   }
   #text4{
-    top: calc(39%);
+    margin-top: calc(25%);
     margin-right: calc(3%);
     animation: bubble 2s linear 2s 1 normal forwards;
   }
   #text5{
-    top: calc(55%);
+    margin-top: calc(50%);
     margin-right: calc(3%);
     animation: bubble 2s linear 2.5s 1 normal forwards;
   }
@@ -131,6 +133,9 @@
   animation: rebubble 3s ease-out 0s 1 normal forwards;
 }
 
+  #man:has(>#text5:focus){
+    animation: man 1s linear 0s 1 normal forwards;
+  }
 
 @keyframes rebubble {
   0% {
@@ -144,11 +149,14 @@
 }
 }
 
-
-/* AI机器人部分 */
-#AI{
+@keyframes man {
+100% {
+  opacity: 0;
   display: none;
 }
+}
+
+/* AI机器人部分 */
 #robot{
   width: 13%;
   position: fixed;
@@ -164,7 +172,7 @@
   font-family:HYLeMiaoTi; 
   font-size: 45px;
   line-height: 40px;
-  margin-top: calc(38%);
+  top: 150px;
   left: calc(30%);
   color: #122648;
   background: #c2d9e9;

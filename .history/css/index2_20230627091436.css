@@ -74,21 +74,21 @@
 
 
   #text1{
-    top: calc(8%);
+    top: calc(5%);
     animation: bubble 2s linear 0s 1 normal forwards;
   }
   #text2{
-    top: calc(25%);
+    top: calc(19%);
     margin-left: calc(4%);
     animation: bubble 2s linear 1.5s 1 normal forwards;
   }
   #text3{
-    top: calc(13%);
+    top: calc(10%);
     margin-right: calc(2%);
     animation: bubble 2s linear 1s 1 normal forwards;
   }
   #text4{
-    top: calc(39%);
+    top: calc(42%);
     margin-right: calc(3%);
     animation: bubble 2s linear 2s 1 normal forwards;
   }
@@ -131,6 +131,9 @@
   animation: rebubble 3s ease-out 0s 1 normal forwards;
 }
 
+  #man:has(>#text5:focus){
+    animation: man 1s linear 0s 1 normal forwards;
+  }
 
 @keyframes rebubble {
   0% {
@@ -144,11 +147,14 @@
 }
 }
 
-
-/* AI机器人部分 */
-#AI{
+@keyframes man {
+100% {
+  opacity: 0;
   display: none;
 }
+}
+
+/* AI机器人部分 */
 #robot{
   width: 13%;
   position: fixed;
@@ -164,7 +170,7 @@
   font-family:HYLeMiaoTi; 
   font-size: 45px;
   line-height: 40px;
-  margin-top: calc(38%);
+  top: calc(65%);
   left: calc(30%);
   color: #122648;
   background: #c2d9e9;

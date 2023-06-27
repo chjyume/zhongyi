@@ -101,10 +101,10 @@
 
   @keyframes bubble {
     0% {
-      opacity: 0;
+     display: none;
   }
   100% {
-    opacity: 1;
+    display:"";
   }
 }
 
@@ -131,6 +131,9 @@
   animation: rebubble 3s ease-out 0s 1 normal forwards;
 }
 
+  #man:has(>#text5:focus){
+    animation: bubble 3s ease-out 0s 1 reverse forwards;
+  }
 
 @keyframes rebubble {
   0% {
@@ -145,10 +148,8 @@
 }
 
 
+
 /* AI机器人部分 */
-#AI{
-  display: none;
-}
 #robot{
   width: 13%;
   position: fixed;
