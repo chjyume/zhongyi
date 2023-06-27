@@ -1,0 +1,44 @@
+.bubble {
+    position: relative;
+    padding: 20px 12px;
+    font-family:HYLeMiaoTi; 
+    font-size: 45px;
+    line-height: 40px;
+    margin-top: calc(38%);
+    left: calc(30%);
+    color: #122648;
+    background: #c2d9e9;
+    border: 1px solid #3fffef;
+    border-radius: 10px;
+   
+  }
+  
+  .bubble::before,
+  .bubble::after {
+  
+    position: absolute;
+    left: -20px;
+    top:24px;
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    border-color: #3fffef #3fffef transparent transparent; 
+    border-style: solid;
+    border-width: 10px;
+    content: "";
+  }  
+  .bubble::after {
+    left: -17px;
+    top:25px;
+    border-color: #c2d9e9 #c2d9e9 transparent transparent;
+  }
+
+
+  #robot{
+    width: 50%;
+    position: fixed;
+    top: calc(65%);
+    left: calc(15%);
+    z-index: 1;
+  
+  }
