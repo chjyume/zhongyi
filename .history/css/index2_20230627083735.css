@@ -76,7 +76,7 @@
 
 
   #text1{
-    margin-top: calc(2%);
+
     animation: bubble 2s linear 0s 1 normal forwards;
   }
   #text2{
@@ -134,7 +134,7 @@
 }
 
   #man:has(>#text5:focus){
-    animation: man 1s linear 0s 1 normal forwards;
+    animation: man 2s linear 0s 1 normal forwards;
   }
 
 @keyframes rebubble {
@@ -153,6 +153,7 @@
 100% {
   opacity: 0;
   display: none;
+  visibility:hidden;
 }
 }
 
@@ -163,7 +164,7 @@
   top: calc(65%);
   left: calc(15%);
   z-index: 1;
-
+  opacity: 0;
 }
 
 .bubble3 {
@@ -178,7 +179,7 @@
   background: #c2d9e9;
   border: 1px solid #3fffef;
   border-radius: 10px;
-
+  opacity: 0;
 }
 
 .bubble3::before,
