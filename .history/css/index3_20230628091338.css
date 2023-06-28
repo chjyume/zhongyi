@@ -1,0 +1,23 @@
+.bubble {
+    position: fixed;
+    padding: 20px 12px;
+    font-family:HYLeMiaoTi; 
+    font-size: 70px;
+    line-height: calc(95%);
+    margin-top: calc(84%);
+    left: calc(38%);
+    height: calc(10%);
+    color: #122648;
+    background: #c2d9e9;
+    border: 1px solid #3fffef;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  #robot{
+    width: 30%;
+    position: fixed;
+    top: calc(15%);
+    left: calc(35%);
+    z-index: 0;
+  }

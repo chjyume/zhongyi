@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-     #textDiv {
-  font-size: 20px;
-  width: 400px;
-  height: 100px;
-  border: 1px solid black;
-  position: relative;
-  overflow: hidden;
-}
-
-.even {
-  background-color: lightblue;
-  color: white;
-}
-
-    </style>
-  </head>
-  <body>
-    <div id="textDiv" style="cursor:pointer;"></div>
-    <script>
-   var textDiv = document.getElementById('textDiv');
-var texts = ['第一段话', '第二段话', '第三段话']; // 替换成你想显示的文字内容
+var textDiv = document.getElementById('textDiv');
+var texts = ['晚上好，这么晚了，你还不睡吗？','我是中医问诊AI小助手，我可以帮你找寻治疗失眠的方法', '通过全网查询得到以下诸多方法，你可以诉说你的需求进行筛选']; // 替换成你想显示的文字内容
 var currentTextIndex = -1;
 var currentText = "";
 
@@ -53,7 +30,3 @@ function showNextText() {
 textDiv.addEventListener('click', showNextText);
 
 showNextText();
-
-    </script>
-  </body>
-</html>

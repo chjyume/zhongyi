@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>小故事引入</title>
+
+        <link href="css\index3.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="family\font.css">
+	</head>
+	<style>
+	body
+	{
+        background-image:url("img/img3-2.png");
+		background-repeat:no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size:cover;
+        position:absolute;
+        left:0;
+        top:0;
+	}	
+	</style>
+	<body>
+		<div class="bubble" id="textDiv"  tabindex="1" style="width:100%;cursor:pointer;"></div>    
+	</body>
+	<script>
+		var textDiv = document.getElementById('textDiv');
+var texts = ['你好，我是中医问诊AI小助手', '我可以帮你找寻治疗失眠的方法', '通过全网查询得到以下诸多方法','你可以诉说你的需求进行筛选']; // 替换成你想显示的文字内容
+var currentTextIndex = -1;
+var currentText = "";
+
+function showNextText() {
+  if (currentTextIndex < texts.length - 1) {
+    currentTextIndex++;
+    currentText = texts[currentTextIndex];
+    var i = 0;
+    textDiv.innerHTML = ""; // 清空文字内容
+    var typing = setInterval(function() {
+      if (i < currentText.length) {
+        textDiv.innerHTML += currentText.charAt(i);
+        i++;
+      } else {
+        clearInterval(typing);
+      }
+    }, 100);
+  } else {
+    return;
+  }
+}
+textDiv.addEventListener('click', showNextText);
+
+showNextText();
+	</script>
+</html>
