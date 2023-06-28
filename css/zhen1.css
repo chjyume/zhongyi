@@ -1,0 +1,8 @@
+#pulse{
+    width: 47%;
+    height: 61%;
+    position: fixed;
+    top: calc(39%);
+    left: calc(42%);
+    z-index: 1;
+}
