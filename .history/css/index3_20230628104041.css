@@ -1,18 +1,21 @@
 #textDiv {
-    height: calc(20%);
     position: fixed;
-    padding: 80px 40px;
+    padding: 60px 40px;
     font-family:HYLeMiaoTi; 
     font-size: 90px;
     line-height: calc(100%);
     text-align: center;
     top:calc(65%);
     left: calc(15%);
-
+    height: calc(25%);
     color: #122648;
     background: #c2d9e9;
     border: 1px solid #3fffef;
     border-radius: 10px;
     opacity: 0.85;
     overflow: hidden;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  
   }

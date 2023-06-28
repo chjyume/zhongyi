@@ -1,5 +1,4 @@
 #textDiv {
-    height: calc(20%);
     position: fixed;
     padding: 80px 40px;
     font-family:HYLeMiaoTi; 
@@ -8,7 +7,7 @@
     text-align: center;
     top:calc(65%);
     left: calc(15%);
-
+    height: calc(25%);
     color: #122648;
     background: #c2d9e9;
     border: 1px solid #3fffef;
