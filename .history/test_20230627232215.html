@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        #textDiv {
+        font-size: 20px;
+        width: 400px;
+        height: 100px;
+        border: 1px solid black;
+        overflow: hidden;
+        }
+
+        #textDiv.show-hand {
+        cursor: pointer;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div id="textDiv" onclick="showNextText()" style="cursor:pointer;"></div>
+    <script>
+            var textDiv = document.getElementById('textDiv');
+        var texts = ['汉皇重色思倾国，御宇多年求不得。杨家有女初长成，养在深闺人未识。', '天生丽质难自弃，一朝选在君王侧。回眸一笑百媚生，六宫粉黛无颜色。', '春寒赐浴华清池，温泉水滑洗凝脂。侍儿扶起娇无力，始是新承恩泽时。']; // 替换成你想显示的文字内容
+        var currentTextIndex = -1;
+        var currentTextNode = null;
+
+        function showNextText() {
+        if (currentTextIndex < texts.length - 1) {
+            currentTextIndex++;
+            var text = texts[currentTextIndex];
+            currentTextNode = document.createElement('span');
+            currentTextNode.innerHTML = text;
+            textDiv.appendChild(currentTextNode);
+        } else {
+            return;
+        }
+
+        if (currentTextIndex === texts.length - 1) {
+            textDiv.classList.add('show-hand');
+        }
+        }
+
+        textDiv.onclick = function () {
+        if (currentTextIndex === texts.length - 1) {
+            var nextSibling = currentTextNode.nextSibling;
+            while (nextSibling) {
+            var temp = nextSibling.nextSibling;
+            textDiv.removeChild(nextSibling);
+            nextSibling = temp;
+            }
+            textDiv.classList.remove('show-hand');
+            currentTextIndex = -1;
+        }
+        };
+
+        showNextText();
+    </script>
+  </body>
+</html>
+        

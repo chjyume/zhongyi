@@ -14,7 +14,7 @@
     </style>
   </head>
   <body>
-    <div id="textDiv" style="cursor:pointer;"></div>
+    <div id="textDiv" onclick="showNextText()" style="cursor:pointer;"></div>
     <script>
    var textDiv = document.getElementById('textDiv');
 var texts = ['第一段话', '第二段话', '第三段话']; // 替换成你想显示的文字内容
@@ -39,6 +39,7 @@ function showNextText() {
     return;
   }
 }
+
 textDiv.addEventListener('click', showNextText);
 
 showNextText();

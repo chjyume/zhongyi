@@ -11,12 +11,24 @@
   overflow: hidden;
 }
 
+#nextBtn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
     </style>
   </head>
   <body>
-    <div id="textDiv" style="cursor:pointer;"></div>
+    <div id="textDiv" onclick="showNextText()" style="cursor:pointer;"></div>
     <script>
-   var textDiv = document.getElementById('textDiv');
+        var textDiv = document.getElementById('textDiv');
 var texts = ['第一段话', '第二段话', '第三段话']; // 替换成你想显示的文字内容
 var currentTextIndex = -1;
 var currentText = "";
@@ -33,16 +45,31 @@ function showNextText() {
         i++;
       } else {
         clearInterval(typing);
+        showNextButton();
       }
     }, 100);
   } else {
     return;
   }
 }
-textDiv.addEventListener('click', showNextText);
+
+function showNextButton() {
+  var nextBtn = document.createElement('div');
+  nextBtn.id = "nextBtn";
+  nextBtn.onclick = function() {
+    if (currentTextIndex < texts.length - 1) {
+      currentTextIndex++;
+      currentText = texts[currentTextIndex];
+      textDiv.innerHTML = "";
+      showNextText();
+    }
+  };
+  textDiv.appendChild(nextBtn);
+  nextBtn.style.display = "block"; 
+  textDiv.style.overflow = "visible";
+}
 
 showNextText();
-
 
     </script>
   </body>
