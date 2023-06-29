@@ -26,21 +26,20 @@ function showNextText() {
         }
         textDiv.appendChild(span);
         i++;
-        if (currentTextIndex === texts.length - 3) {
-          var imageDiv = document.getElementById('imageDiv');
-          imageDiv.style.display = 'block';
-        }
+        textDiv.addEventListener('click', showNextText);
+        showNextText(); 
+
       } else {
         clearInterval(typing);
       }
     }, 100);
   } else {
-    return;
+    textDiv.removeEventListener('click', showNextText); // 文本全部加载完毕后移除点击事件监听器
+    textDiv.style.display = 'none'; 
   }
 }
 
-textDiv.addEventListener('click', showNextText);
+
 
 showNextText();
-
 

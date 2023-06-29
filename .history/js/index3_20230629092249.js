@@ -26,10 +26,6 @@ function showNextText() {
         }
         textDiv.appendChild(span);
         i++;
-        if (currentTextIndex === texts.length - 3) {
-          var imageDiv = document.getElementById('imageDiv');
-          imageDiv.style.display = 'block';
-        }
       } else {
         clearInterval(typing);
       }

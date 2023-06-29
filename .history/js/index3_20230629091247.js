@@ -26,21 +26,18 @@ function showNextText() {
         }
         textDiv.appendChild(span);
         i++;
-        if (currentTextIndex === texts.length - 3) {
-          var imageDiv = document.getElementById('imageDiv');
-          imageDiv.style.display = 'block';
-        }
       } else {
         clearInterval(typing);
       }
     }, 100);
+    textDiv.addEventListener('click', showNextText); // 点击继续加载下一个文本
+    showNextText();
   } else {
+    textDiv.removeEventListener('click', showNextText); // 文本全部加载完毕后移除点击事件监听器
+    textDiv.style.display = 'none'; 
     return;
   }
 }
 
-textDiv.addEventListener('click', showNextText);
 
 showNextText();
-
-
