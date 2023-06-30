@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>小故事</title>
+        <link rel="stylesheet" type="text/css" href="family\font.css">
+	</head>
+	<style>
+
+
+* {
+    /* 常规初始化 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    /* 常规居中显示 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  
+    min-height: 100vh;
+  }
+  
+  .box {
+    /* 超出部分要隐藏 */
+    overflow: hidden;
+  
+    /* 撑开父盒子大小 */
+    padding: 15vmin 10vmin;
+    /* 小圆角 */
+    border-radius: 5vmin;
+    /* 文字颜色、大小 */
+    color: #66ddf7;
+    font-size: 8vmin;
+  
+    /* 简单定位 */
+    position: relative;
+    /* 显示层级最上面 */
+    z-index: 0;
+  }
+  .box::before {
+    content: "";
+  
+    /* 宽高要超过父级默认的大小 */
+    width: 200%;
+    height: 200%;
+    /* 基础背景颜色 */
+    background-color: #ffffffc4;
+    /* conic-gradient 围绕中心点旋转的渐变 */
+    background-image: conic-gradient(transparent, #4eb8ff, transparent 30%);
+  
+    /* 定位到中间 */
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    /* 显示层级最底层 */
+    z-index: -2;
+  
+    /* 旋转整个灯光渐变这一层 */
+    animation: rotate 5s linear infinite;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .box::after {
+    content: "";
+  
+    /* 往内撑开盒子宽高，正好小一圈当做边框 */
+    inset: 1vmin;
+    background: #3995ff;
+    border-radius: 4vmin;
+  
+    position: absolute;
+    /* 显示层级中间，盖住最后一层的灯光 */
+    z-index: -1;
+  }
+	</style>
+	<body>
+		<div class="box">流水灯边框</div>
+	</body>
+</html>
+<script>
+	
