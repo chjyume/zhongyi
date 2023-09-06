@@ -1,0 +1,116 @@
+<html>
+<head>
+<meta charset='UTF-8'/>
+<style>
+    .msg_container {
+        position: relative;
+        margin: 10px;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    
+	.msg_left {
+	    position: relative;
+        margin: 10px 0;
+	    max-width: 200px;
+	    min-height: 20px;
+	    padding: 8px;
+	    border: solid 1px #ff6a00;
+	    border-radius: 10px;
+	    background: limegreen;
+	    clear: both;
+	    float: left;
+	}
+	.msg_left:before {
+	    position: absolute;
+	    top: 50%;
+	    left: -20px;
+	    transform: translateY(-50%);
+	    padding: 0;
+	    border: 10px solid;
+	    border-color: transparent #ff6a00 transparent transparent;
+	    content: '';
+	    z-index: 9;
+	}
+	
+	.msg_right {
+	    position: relative;
+        margin: 10px 0;
+	    max-width: 200px;
+	    min-height: 20px;
+	    padding: 8px;
+	    border: solid 1px #ff6a00;
+	    border-radius: 10px;
+	    background: royalblue;
+	    text-align: right;
+	    color: white;
+	    clear: both;
+	    float: right;
+	}
+	.msg_right:before {
+	    position: absolute;
+	    top: 50%;
+	    right: -20px;
+	    transform: translateY(-50%);
+	    padding: 0;
+	    border: 10px solid;
+	    border-color: transparent transparent transparent #ff6a00;
+	    content: '';
+	    z-index: 9;
+	}
+</style>
+</head>
+<title>对话框</title>
+<body>
+    <div id="msg_container"></div>
+
+    <script>
+        // 缓存消息容器
+        const msgContainer = document.getElementById('msg_container');
+
+        // 定义已知的聊天内容和发送者
+        const chatContent = [
+            { text: '你好，这是一条用户发出的消息。', sender: 'user' },
+            { text: '你好，这是一条AI回复的消息。', sender: 'ai' },
+            { text: '这是另一条用户发出的消息。', sender: 'user' }
+        ];
+
+        function updateMessages() {
+            // 清空原有的消息显示
+            msgContainer.innerHTML = '';
+
+            // 遍历聊天内容，渲染出相应的气泡
+            for (let i = 0; i < chatContent.length; i++) {
+                const message = chatContent[i];
+
+                if (message.sender === 'user') {
+                    // 用户输入的消息显示在右侧
+                    const messageEl = document.createElement('div');
+                    messageEl.classList.add('msg_container');
+                    const textEl = document.createElement('div');
+                    textEl.classList.add('msg_right');
+                    textEl.textContent = message.text;
+                    messageEl.appendChild(textEl);
+                    msgContainer.appendChild(messageEl);
+                } else if (message.sender === 'ai') {
+                    // AI 回复的消息显示在左侧
+                    const messageEl = document.createElement('div');
+                    messageEl.classList.add('msg_container');
+                    const textEl = document.createElement('div');
+                    textEl.classList.add('msg_left');
+                    textEl.textContent = message.text;
+                    messageEl.appendChild(textEl);
+                    msgContainer.appendChild(messageEl);
+                }
+            }
+
+            // 滚动到最新的消息处
+            msgContainer.scrollTop = msgContainer.scrollHeight;
+        }
+
+        // 页面加载完成后，更新消息界面
+        updateMessages();
+    </script>
+</body>
+</html>
