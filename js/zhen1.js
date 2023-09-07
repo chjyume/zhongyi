@@ -1,14 +1,33 @@
-const chatBubbles = document.querySelectorAll('.chat-bubble');
-const nextButton = document.getElementById('next-button');
-let currentBubbleIndex = 0;
+function showContent(selectedOption) {
+  var responseMap = {
+      option1: "选项1的回答",
+      option2: "选项2的回答",
+      option3: "选项3的回答"
+  };
 
-nextButton.addEventListener('click', () => {
-  chatBubbles[currentBubbleIndex].classList.remove('show');
-  currentBubbleIndex++;
-  
-  if (currentBubbleIndex >= chatBubbles.length) {
-    currentBubbleIndex = 0; // 如果已经显示了所有气泡，则重新从第一个开始显示
+  var response = responseMap[selectedOption];
+
+  if (response) {
+      var conversation = document.getElementById("conversation");
+
+      var userBubble = document.createElement("div");
+      userBubble.className = "bubble left-bubble";
+      userBubble.innerHTML = "<p>" + selectedOption + "</p>";
+      conversation.appendChild(userBubble);
+
+      var botBubble = document.createElement("div");
+      botBubble.className = "bubble right-bubble";
+      conversation.appendChild(botBubble);
+
+      // 将回答逐字显示
+      var i = 0;
+      var showResponse = setInterval(function() {
+          if (i < response.length) {
+              botBubble.innerHTML += response.charAt(i);
+              i++;
+          } else {
+              clearInterval(showResponse);
+          }
+      }, 50);
   }
-  
-  chatBubbles[currentBubbleIndex].classList.add('show');
-});
+}

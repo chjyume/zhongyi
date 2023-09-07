@@ -7,29 +7,60 @@
     z-index: 1;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 300px;
-  height: 150px;
-  
-  padding: 10px;
-}
-
-.chat-bubble1 {
-  width: 200px;
-  height: 50px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+/* 气泡样式 */
+.bubble {
+  position: relative;
+  background-color: #f9f9f9;
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
-  text-align: center;
-  line-height: 50px;
+  padding: 10px;
   margin-bottom: 10px;
-  opacity: 1;
-  transition: opacity 0.3s;
+  max-width: 300px;
 }
 
-.show {
-  opacity: 1;
+/* 左侧气泡 */
+.left-bubble {
+  float: left;
+  clear: both;
+  margin-right: 50px;
+  background-color: #e6eaff;
+  color: #333;
+}
+
+/* 右侧气泡 */
+.right-bubble {
+  float: left;
+  clear: both;
+  margin-right: 50px; /* 修改为 margin-right */
+  background-color: #fff5e6;
+  color: #333;
+}
+/* 选择框容器样式 */
+.options-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* 按钮样式 */
+.option-button {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4c87d4;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 对话框容器样式 */ 
+.conversation-container {
+  height: 600px; /* 设置对话框容器的高度 */
+  overflow-y: scroll; /* 添加垂直滚动条 */
 }

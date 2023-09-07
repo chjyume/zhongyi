@@ -1,116 +1,129 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset='UTF-8'/>
 <style>
-    .msg_container {
+    /* 气泡样式 */
+    .bubble {
         position: relative;
-        margin: 10px;
-        width: 100%;
-        height: auto;
-        overflow: hidden;
+        background-color: #f9f9f9;
+        border: 1px solid #c4c4c4;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        max-width: 300px;
     }
-    
-	.msg_left {
-	    position: relative;
-        margin: 10px 0;
-	    max-width: 200px;
-	    min-height: 20px;
-	    padding: 8px;
-	    border: solid 1px #ff6a00;
-	    border-radius: 10px;
-	    background: limegreen;
-	    clear: both;
-	    float: left;
-	}
-	.msg_left:before {
-	    position: absolute;
-	    top: 50%;
-	    left: -20px;
-	    transform: translateY(-50%);
-	    padding: 0;
-	    border: 10px solid;
-	    border-color: transparent #ff6a00 transparent transparent;
-	    content: '';
-	    z-index: 9;
-	}
-	
-	.msg_right {
-	    position: relative;
-        margin: 10px 0;
-	    max-width: 200px;
-	    min-height: 20px;
-	    padding: 8px;
-	    border: solid 1px #ff6a00;
-	    border-radius: 10px;
-	    background: royalblue;
-	    text-align: right;
-	    color: white;
-	    clear: both;
-	    float: right;
-	}
-	.msg_right:before {
-	    position: absolute;
-	    top: 50%;
-	    right: -20px;
-	    transform: translateY(-50%);
-	    padding: 0;
-	    border: 10px solid;
-	    border-color: transparent transparent transparent #ff6a00;
-	    content: '';
-	    z-index: 9;
-	}
+
+    /* 左侧气泡 */
+    .left-bubble {
+        float: left;
+        clear: both;
+        margin-right: 50px;
+        background-color: #e6eaff;
+        color: #333;
+    }
+
+    /* 右侧气泡 */
+    .right-bubble {
+        float: right;
+        clear: both;
+        margin-right: 0px;
+        background-color: #fff5e6;
+        color: #333;
+    }
+
+    /* 选择框容器样式 */
+    .options-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 80%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 按钮样式 */
+    .option-button {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4c87d4;
+        color: #fff;
+        cursor: pointer;
+    }
+    /* 自定义滚动条样式 */
+    #conversation::-webkit-scrollbar {
+    width: 8px;  /* 设置滚动条宽度 */
+    }
+
+    #conversation::-webkit-scrollbar-track {
+    background-color: #f5f5f5;  /* 设置滚动条轨道背景颜色 */
+    }
+
+    #conversation::-webkit-scrollbar-thumb {
+    background-color: #888;  /* 设置滚动条滑块颜色 */
+    border-radius: 4px;  /* 设置滚动条滑块圆角 */
+    }
+
+    #conversation::-webkit-scrollbar-thumb:hover {
+    background-color: #555;  /* 设置滚动条滑块悬停时颜色 */
+    }
+
 </style>
-</head>
-<title>对话框</title>
-<body>
-    <div id="msg_container"></div>
+<script>
+     function showContent(selectedOption) {
+        var responseMap = {
+            option1: "选项1的回答",
+            option2: "选项2的回答",
+            option3: "选项3的回答"
+        };
 
-    <script>
-        // 缓存消息容器
-        const msgContainer = document.getElementById('msg_container');
+        var response = responseMap[selectedOption];
 
-        // 定义已知的聊天内容和发送者
-        const chatContent = [
-            { text: '你好，这是一条用户发出的消息。', sender: 'user' },
-            { text: '你好，这是一条AI回复的消息。', sender: 'ai' },
-            { text: '这是另一条用户发出的消息。', sender: 'user' }
-        ];
+        if (response) {
+            var conversation = document.getElementById("conversation");
 
-        function updateMessages() {
-            // 清空原有的消息显示
-            msgContainer.innerHTML = '';
+            var userBubble = document.createElement("div");
+            userBubble.className = "bubble left-bubble";
+            userBubble.innerHTML = "<p>" + selectedOption + "</p>";
+            conversation.appendChild(userBubble);
 
-            // 遍历聊天内容，渲染出相应的气泡
-            for (let i = 0; i < chatContent.length; i++) {
-                const message = chatContent[i];
+            var botBubble = document.createElement("div");
+            botBubble.className = "bubble right-bubble";
+            conversation.appendChild(botBubble);
 
-                if (message.sender === 'user') {
-                    // 用户输入的消息显示在右侧
-                    const messageEl = document.createElement('div');
-                    messageEl.classList.add('msg_container');
-                    const textEl = document.createElement('div');
-                    textEl.classList.add('msg_right');
-                    textEl.textContent = message.text;
-                    messageEl.appendChild(textEl);
-                    msgContainer.appendChild(messageEl);
-                } else if (message.sender === 'ai') {
-                    // AI 回复的消息显示在左侧
-                    const messageEl = document.createElement('div');
-                    messageEl.classList.add('msg_container');
-                    const textEl = document.createElement('div');
-                    textEl.classList.add('msg_left');
-                    textEl.textContent = message.text;
-                    messageEl.appendChild(textEl);
-                    msgContainer.appendChild(messageEl);
+            // 将回答逐字显示
+            var i = 0;
+            var showResponse = setInterval(function() {
+                if (i < response.length) {
+                    botBubble.innerHTML += response.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(showResponse);
+
+                    // 将页面滚动到底部
+                    conversation.scrollTop = conversation.scrollHeight;
                 }
-            }
-
-            // 滚动到最新的消息处
-            msgContainer.scrollTop = msgContainer.scrollHeight;
+            }, 50);
         }
+    }
+</script>
+</head>
+<body>
+    <div id="conversation" style="height: 420px;margin-right: 150px; overflow-y: scroll;">
+        <div class="bubble left-bubble">
+            <p>左侧消息内容</p>
+        </div>
+    </div>
 
-        // 页面加载完成后，更新消息界面
-        updateMessages();
-    </script>
+    <div class="options-container">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <button class="option-button" onclick="showContent('option1')">选项1</button>
+            <button class="option-button" onclick="showContent('option2')">选项2</button>
+            <button class="option-button" onclick="showContent('option3')">选项3</button>
+        </div>
+    </div>
 </body>
 </html>
