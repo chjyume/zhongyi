@@ -6,9 +6,11 @@
     left: calc(42%);
     z-index: 1;
 }
-
-/* 气泡样式 */
-.bubble {
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+    /* 气泡样式 */
+/*.bubble {
   position: relative;
   background-color: #f9f9f9;
   border: 1px solid #c4c4c4;
@@ -16,51 +18,125 @@
   padding: 10px;
   margin-bottom: 10px;
   max-width: 300px;
+}*/
+
+.special-bubble {
+  position: relative;
+  background-color: #E6EEFF;
+  color: #333;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.special-bubble:before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 16px;
+  border-style: solid;
+  border-width: 8px 8px 0;
+  border-color: #E6EEFF transparent;
+}
+
+.special-bubble p {
+  margin: 0;
+  font-weight: bold;
+  text-align: center; /* 居中对齐 */
+}
+.option-button.disabled {
+opacity: 0.5; /* 设置透明度为 0.5，达到变暗效果 */
+cursor: not-allowed; /* 鼠标指针设置为不可用 */
+}
+
 
 /* 左侧气泡 */
 .left-bubble {
-  float: left;
-  clear: both;
-  margin-right: 50px;
-  background-color: #e6eaff;
-  color: #333;
+float: left;
+clear: both;
+margin-right: 50px;
+background: linear-gradient(to right, #95b6fa, #4a00e0);
+color: #fff;
+border-radius: 20px;
+padding: 15px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+border: none;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-bubble:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* 右侧气泡 */
 .right-bubble {
-  float: left;
-  clear: both;
-  margin-right: 50px; /* 修改为 margin-right */
-  background-color: #fff5e6;
-  color: #333;
+float: right;
+clear: both;
+margin-right: 0px;
+background: linear-gradient(to right, #c4fd9b, hsla(63, 100%, 86%, 0.977));
+color: #333;
+border-radius: 20px;
+padding: 15px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+border: none;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.right-bubble:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
 /* 选择框容器样式 */
 .options-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 80%;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  z-index: 5;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 50%;
+padding: 10px;
+display: flex;
+justify-content: center;
 }
 
 /* 按钮样式 */
 .option-button {
-  margin-bottom: 10px;
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4c87d4;
-  color: #fff;
-  cursor: pointer;
+margin: 10px;
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+background-color: #4c87d4;
+color: #fff;
+cursor: pointer;
+transition: background-color 0.3s ease;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* 对话框容器样式 */ 
-.conversation-container {
-  height: 600px; /* 设置对话框容器的高度 */
-  overflow-y: scroll; /* 添加垂直滚动条 */
+.option-button:hover {
+background-color: #366fbf;
+}
+
+.option-button.disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+/* 自定义滚动条样式 */
+#conversation::-webkit-scrollbar {
+width: 8px;  /* 设置滚动条宽度 */
+}
+
+#conversation::-webkit-scrollbar-track {
+background-color: #f5f5f5;  /* 设置滚动条轨道背景颜色 */
+}
+
+#conversation::-webkit-scrollbar-thumb {
+background-color: #888;  /* 设置滚动条滑块颜色 */
+border-radius: 4px;  /* 设置滚动条滑块圆角 */
+}
+
+#conversation::-webkit-scrollbar-thumb:hover {
+background-color: #555;  /* 设置滚动条滑块悬停时颜色 */
 }
