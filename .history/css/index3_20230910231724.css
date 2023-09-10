@@ -51,7 +51,7 @@
 
 }
 .bubble{
-  margin: 8vh;
+  margin: 5vh;
     display: inline-block;
   height: 6vh;
   font-size: 2vw;
@@ -70,7 +70,7 @@
 #text1{
   display: inline-block;
   position: absolute;
-  
+  top:2vh;
   left:40vh;
 }
 #text2 {
@@ -81,8 +81,8 @@
 #text3 {
   display: inline-block;
   position: absolute;
-  top:50vh;
-  left: -5vh;
+  top:40vh;
+  right: 15vh;
   
 }
 
