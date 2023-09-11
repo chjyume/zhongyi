@@ -1,230 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  body {
-  font-family: 'Montserrat', sans-serif;
-}
-    /* 气泡样式 */
-/*.bubble {
-  position: relative;
-  background-color: #f9f9f9;
-  border: 1px solid #c4c4c4;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-  max-width: 300px;
-}*/
+    <meta charset="utf-8" />
+    <title>诊疗--针灸</title>
+    <style>
+        body {
+            background-image: url("img/jiu1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        #pulse {
+            width: 50%;
+            height: 48%;
+            position: fixed;
+            top: calc(55%);
+            left: calc(50%);
+            z-index: 1;
+            transform: rotatex(37deg);
+        }
+        
+        #zhen {
+            width: 20%;
+            height: 20%;
+            position: fixed;
+            top: calc(20%);
+            left: calc(80%);
+            z-index: 2;
+        }
+        
+        #target {
+            position: absolute;
+            width: 220px;
+            height: 200px;
+            margin: 450px 0 0 1200px; /* 调整边框位置，向右下移动 */
+            z-index: 2;
+            border: 2px dashed gray;  /* 添加虚线边框样式 */
+            border-radius: 10px;  /* 添加圆角边框样式 */
+            background-color: rgba(255, 255, 255, 0.7);  /* 添加半透明的背景颜色 */
+        }
 
-.special-bubble {
-  position: relative;
-  background-color: #E6EEFF;
-  color: #333;
-  border-radius: 20px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+        #target img {
+            width: 200px;
+            height: 150px;
+            margin: 10px; /* 调整图片与边框的距离 */
+        }
 
-.special-bubble:before {
-  content: '';
-  position: absolute;
-  top: -14px;
-  left: 16px;
-  border-style: solid;
-  border-width: 8px 8px 0;
-  border-color: #E6EEFF transparent;
-}
+        .hidden {
+            display: none;
+        }
 
-.special-bubble p {
-  margin: 0;
-  font-weight: bold;
-  text-align: center; /* 居中对齐 */
-}
-.option-button.disabled {
-opacity: 0.5; /* 设置透明度为 0.5，达到变暗效果 */
-cursor: not-allowed; /* 鼠标指针设置为不可用 */
-}
+        #message {
+            display: none; /* 移除提示信息的显示 */
+        }
+    </style>
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+            event.target.classList.add("dragging-over"); /* 添加拖放过程中的样式 */
+        }
 
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
 
-.left-bubble {
-  float: left;
-  clear: both;
-  margin-right: 50px;
-  background: linear-gradient(to right, #95b6fa, #4a00e0);
-  color: #fff;
-  border-radius: 10px;
-  padding: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-height: 150px; /* 将max-width设置为更小的像素值，例如200px */
-}
+        function drop(event) {
+            event.preventDefault();
+            event.target.classList.remove("dragging-over"); /* 移除拖放过程中的样式 */
 
-.right-bubble {
-  float: right;
-  clear: both;
-  margin-right: 0px;
-  background: linear-gradient(to right, #c4fd9b, hsla(163, 42%, 68%, 0.977));
-  color: #333;
-  border-radius: 10px;
- 
-  padding-bottom: 15px; /* 设置右侧气泡的下内边距 */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-height: 150px; /* 将max-width设置为更小的像素值，例如200px */
-}
+            var data = event.dataTransfer.getData("text");
 
-.left-bubble:hover {
-transform: scale(1.05);
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+            // 隐藏原位置的图片
+            var originalImage = document.getElementById(data);
+            originalImage.classList.add("hidden");
 
+            // 在目标区域创建一个新的图片元素，并设置其属性
+            var img = document.createElement("img");
+            img.src = originalImage.src;
 
-.right-bubble:hover {
-transform: scale(1.05);
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-
-/* 选择框容器样式 */
-.options-container {
-position: fixed;
-bottom: 0;
-left: 0;
-width: 50%;
-padding: 10px;
-display: flex;
-justify-content: center;
-}
-
-/* 按钮样式 */
-.option-button {
-margin: 10px;
-padding: 10px 15px;
-font-size: 16px;
-border: none;
-border-radius: 5px;
-background-color: #4c87d4;
-color: #fff;
-cursor: pointer;
-transition: background-color 0.3s ease;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.option-button:hover {
-background-color: #366fbf;
-}
-
-.option-button.disabled {
-opacity: 0.5;
-cursor: not-allowed;
-}
-.container {
-  overflow-x: hidden;
-}
-
-/* 自定义滚动条样式 */
-#conversation::-webkit-scrollbar {
-width: 8px;  /* 设置滚动条宽度 */
-}
-
-#conversation::-webkit-scrollbar-track {
-background-color: #f5f5f5;  /* 设置滚动条轨道背景颜色 */
-}
-
-#conversation::-webkit-scrollbar-thumb {
-background-color: #888;  /* 设置滚动条滑块颜色 */
-border-radius: 4px;  /* 设置滚动条滑块圆角 */
-}
-
-#conversation::-webkit-scrollbar-thumb:hover {
-background-color: #555;  /* 设置滚动条滑块悬停时颜色 */
-}
-
-</style>
-<script>
-function showContent(selectedOption) {
-  var responseMap = {
-    "请您把手伸出来": "这就是传说中的中医把脉",
-    "你这个失眠应该有挺长时间了吧，主要什么症状，做梦多不多？": "挺长时间了，睡不着，梦有点多",
-    "这属于中医中的心肝火旺，趴下来吧，躺好": "谢谢医生"
-  };
-  
-  var response = responseMap[selectedOption];
-
-  if (response) {
-    var conversation = document.getElementById("conversation");
-
-    // 创建用户气泡元素
-    var userBubble = document.createElement("div");
-    userBubble.className = "bubble left-bubble";
-    userBubble.innerHTML = `
-      <p>中医:</p>
-      <p></p>
-    `;
-    conversation.appendChild(userBubble);
-
-    // 将用户回答逐字显示
-    var j = 0;
-    var showUserResponse = setInterval(function() {
-      if (j < selectedOption.length) {
-        userBubble.getElementsByTagName("p")[1].innerText += selectedOption.charAt(j);
-        j++;
-      } else {
-        clearInterval(showUserResponse);
-
-        // 创建机器人气泡元素  
-        var botBubble = document.createElement("div");
-        botBubble.className = "bubble right-bubble";
-        botBubble.innerHTML = `
-          <p>男主:</p>
-        `;
-        conversation.appendChild(botBubble);
-
-        // 将回答逐字显示
-        var i = 0;
-        var showResponse = setInterval(function() {
-          if (i < response.length) {
-            botBubble.innerHTML += response.charAt(i);
-            i++;
-          } else {
-            clearInterval(showResponse);
-           
-            // 将页面滚动到底部
-            conversation.scrollTop = conversation.scrollHeight;
-
-            // 30秒后跳转到下一页
-            setTimeout(function() {
-              window.location.href = "zhnjiu.html"; // 将"next_page.html"替换为您要跳转的页面URL
-            }, 12000);
-          }
-        }, 90);
-      }
-    }, 90);
-
-    // 禁用已选择的按钮
-    var selectedButton = document.querySelector(".option-button[data-option='" + selectedOption + "']");
-    selectedButton.disabled = true;
-    selectedButton.classList.add("disabled");
-  }
-}
-</script>
+            // 将新的图片元素添加到目标区域中
+            event.target.appendChild(img);
+        }
+    </script>
 </head>
 <body>
-<div id="conversation" style="height: 600px; margin-right: 40%; overflow-y: scroll;">
-  <div class="special-bubble">
-    <div class="triangle"></div>
-    <p>把脉</p>
-  </div>
-</div>
-
-<div class="options-container">
-  <div style="display: flex; flex-direction: column; align-items: center;">
-    <button class="option-button custom-option" onclick="showContent('请您把手伸出来')" data-option="请您把手伸出来">请您把手伸出来</button>
-    <button class="option-button custom-option" onclick="showContent('你这个失眠应该有挺长时间了吧，主要什么症状，做梦多不多？')" data-option="你这个失眠应该有挺长时间了吧，主要什么症状，做梦多不多？">你这个失眠应该有挺长时间了吧，主要什么症状，做梦多不多？</button>
-    <button class="option-button custom-option" onclick="showContent('这属于中医中的心肝火旺，趴下来吧，躺好')" data-option="这属于中医中的心肝火旺，趴下来吧，躺好">这属于中医中的心肝火旺，趴下来吧，躺好</button>
-  </div>
-</div>
+    <img id="pulse" src="img/zhenjiu2.png">
+    <div id="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="zhen" src="img/zhenjiu3.png" draggable="true" ondragstart="drag(event)">
 </body>
 </html>

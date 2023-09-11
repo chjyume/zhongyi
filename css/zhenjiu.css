@@ -1,0 +1,12 @@
+
+#pulse {
+    width: 47%;
+    height: 45%;
+    position: fixed;
+    top: calc(54%);
+    left: calc(15%);
+    z-index: 1;
+    transform: rotateX(50deg) rotateY(deg); /* 上下和左右翻转 */
+}
+
+<img id="pulse" src="img/zhenjiu2.png">
