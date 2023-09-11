@@ -46,18 +46,33 @@ cursor: not-allowed; /* 鼠标指针设置为不可用 */
 }
 
 
-/* 左侧气泡 */
 .left-bubble {
-float: left;
-clear: both;
-margin-right: 50px;
-background: linear-gradient(to right, #95b6fa, #4a00e0);
-color: #fff;
-border-radius: 20px;
-padding: 15px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-border: none;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  float: left;
+  clear: both;
+  margin-right: 50px;
+  background: linear-gradient(to right, #95b6fa, #4a00e0);
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-height: 150px; /* 将max-width设置为更小的像素值，例如200px */
+}
+
+.right-bubble {
+  float: right;
+  clear: both;
+  margin-right: 0px;
+  background: linear-gradient(to right, #c4fd9b, hsla(163, 42%, 68%, 0.977));
+  color: #333;
+  border-radius: 10px;
+ 
+  padding-bottom: 15px; /* 设置右侧气泡的下内边距 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-height: 150px; /* 将max-width设置为更小的像素值，例如200px */
 }
 
 .left-bubble:hover {
@@ -65,19 +80,6 @@ transform: scale(1.05);
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 右侧气泡 */
-.right-bubble {
-float: right;
-clear: both;
-margin-right: 0px;
-background: linear-gradient(to right, #c4fd9b, hsla(163, 42%, 68%, 0.977));
-color: #333;
-border-radius: 20px;
-padding: 15px;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-border: none;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .right-bubble:hover {
 transform: scale(1.05);
@@ -99,7 +101,7 @@ justify-content: center;
 /* 按钮样式 */
 .option-button {
 margin: 10px;
-padding: 10px 20px;
+padding: 10px 15px;
 font-size: 16px;
 border: none;
 border-radius: 5px;
@@ -117,6 +119,9 @@ background-color: #366fbf;
 .option-button.disabled {
 opacity: 0.5;
 cursor: not-allowed;
+}
+.container {
+  overflow-x: hidden;
 }
 
 /* 自定义滚动条样式 */

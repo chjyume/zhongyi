@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>诊疗--</title>
+
+        <link href="css\zhen1.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="family\font.css">
+	</head>
+	<style>
+	body
+	{
+        background-image:url("img/img4-1.png");
+		background-repeat:no-repeat;
+        height: 90%;
+        width: 90%;
+        background-size:cover;
+        position:absolute;
+        left:0;
+        top:0;
+	}
+		
+	</style>
+	<body>
+        <img id="pulse" src="img/img4-2.png">
+		<div id="conversation" style="height: 520px; margin-right: 45%; overflow-y: scroll;">
+			<div class="special-bubble">
+			  <div class="triangle"></div>
+			  <p>把脉交流区</p>
+			</div>
+		  </div>
+		  
+		  <div class="options-container">
+			<div style="display: flex; flex-direction: column; align-items: center;">
+			  <button class="option-button custom-option" onclick="showContent('请您把手伸出来')" data-option="请您把手伸出来">请您把手伸出来</button>
+			  <button class="option-button custom-option" onclick="showContent('音乐治疗也需要辩证，只有把中医的辩证论治和音乐治疗结合起来，才能取得更好的效果')" data-option="音乐治疗也需要辩证，只有把中医的辩证论治和音乐治疗结合起来，才能取得更好的效果">音乐治疗也需要辩证</button>
+			  <button class="option-button custom-option" onclick="showContent('从脉象来讲你是心肝火旺啊，所以建议一下你做音乐治疗，接下来去隔壁音乐治疗室，音乐治疗师会根据评估，给你做出一个专属的音乐治疗方案')" data-option="从脉象来讲你是心肝火旺啊，所以建议一下你做音乐治疗，接下来去隔壁音乐治疗室，音乐治疗师会根据评估，给你做出一个专属的音乐治疗方案">从脉象来讲你是心肝火旺啊，所以建议一下你做音乐治疗</button>
+			</div>
+		  </div>
+	</body>
+	<script src="js/zhen3.js"></script>
+</html>

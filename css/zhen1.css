@@ -22,8 +22,8 @@ body {
 
 .special-bubble {
   position: relative;
-  background-color: #E6EEFF;
-  color: #333;
+  background-color: #ffffff;
+  color: #91cff0;
   border-radius: 20px;
   padding: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -57,11 +57,13 @@ clear: both;
 margin-right: 50px;
 background: linear-gradient(to right, #95b6fa, #4a00e0);
 color: #fff;
-border-radius: 20px;
-padding: 15px;
+border-radius: 8px;
+padding: 5px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 border: none;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
+max-height: 200px;
+max-width: 450px
 }
 
 .left-bubble:hover {
@@ -74,13 +76,17 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 float: right;
 clear: both;
 margin-right: 0px;
-background: linear-gradient(to right, #c4fd9b, hsla(63, 100%, 86%, 0.977));
+background: linear-gradient(to right, #ffe06ee9, hsla(63, 100%, 86%, 0.977));
 color: #333;
-border-radius: 20px;
-padding: 15px;
+border-radius: 10px;
+padding-left: 5px;
+padding-right: 5px;
+padding-bottom: 15px; /* 设置右侧气泡的下内边距 */
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 border: none;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
+max-height: 200px;
+
 }
 
 .right-bubble:hover {
@@ -107,7 +113,7 @@ padding: 10px 20px;
 font-size: 16px;
 border: none;
 border-radius: 5px;
-background-color: #4c87d4;
+background-color: #d7adff;
 color: #fff;
 cursor: pointer;
 transition: background-color 0.3s ease;
@@ -115,12 +121,15 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .option-button:hover {
-background-color: #366fbf;
+background-color: #eddd95;
 }
 
 .option-button.disabled {
 opacity: 0.5;
 cursor: not-allowed;
+}
+.container {
+  overflow-x: hidden;
 }
 
 /* 自定义滚动条样式 */
@@ -133,10 +142,10 @@ background-color: #f5f5f5;  /* 设置滚动条轨道背景颜色 */
 }
 
 #conversation::-webkit-scrollbar-thumb {
-background-color: #888;  /* 设置滚动条滑块颜色 */
+background-color: #ffffffdb;  /* 设置滚动条滑块颜色 */
 border-radius: 4px;  /* 设置滚动条滑块圆角 */
 }
 
 #conversation::-webkit-scrollbar-thumb:hover {
-background-color: #555;  /* 设置滚动条滑块悬停时颜色 */
+background-color: #6bbfff;  /* 设置滚动条滑块悬停时颜色 */
 }

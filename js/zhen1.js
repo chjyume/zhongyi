@@ -32,7 +32,7 @@ function showContent(selectedOption) {
         var botBubble = document.createElement("div");
         botBubble.className = "bubble right-bubble";
         botBubble.innerHTML = `
-          <p>男主:</p>
+          <p>我:</p>
         `;
         conversation.appendChild(botBubble);
 
