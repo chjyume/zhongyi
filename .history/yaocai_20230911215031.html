@@ -1,0 +1,656 @@
+<!-- 
+	@author: vito
+	@startTime: 04 Jan 2019
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>3D follow cursor flip</title>
+	<link rel="stylesheet" type="text/css" href="css/yaocai.css">
+</head>
+
+<body>
+	<header class="top-bar">
+		<h1>中药材详解</h1>
+	</header>
+	<section class="container">
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y1.png" alt="">
+				<section class="itemContent">
+					<span>【白芍】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：味苦，酸，性微寒。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肝，脾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：养血调经，敛阴止汗， 柔肝</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y2.png" alt="">
+				<section class="itemContent">
+					<span>【大黄】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：味苦，酸，性微寒。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肝，脾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：养血调经，敛阴止汗， 柔肝</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y3.png" alt="">
+				<section class="itemContent">
+					<span>【党参】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：甘，平。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：脾，肺经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：益气，生津，脾胃虚弱， 气</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y4.png" alt="">
+				<section class="itemContent">
+					<span>【黄连】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性寒，味苦。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归心，脾，胃，肝，胆， 大</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：清热燥湿，泻火解毒。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y5.png" alt="">
+				<section class="itemContent">
+					<span>【麦冬】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：甘，微苦，微寒。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归心，肺，胃经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：养阴生津，润肺止咳， 用于肺胃阴虚，津少口渴，干咳咯血。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y6.png" alt="">
+				<section class="itemContent">
+					<span>【迷迭香】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：辛、性温，无毒。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肺，胃，脾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：镇静安神，提神醒脑， 消毒杀菌。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y7.png" alt="">
+				<section class="itemContent">
+					<span>【三七】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性温，味甘，微苦。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归心,肝,脾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：止血补血，抗血栓， 增强免疫。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y8.png" alt="">
+				<section class="itemContent">
+					<span>【天麻】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：平，味甘。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肝经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：息风止痉，平肝潜阳， 祛风通络。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y9.png" alt="">
+				<section class="itemContent">
+					<span>【人参】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：味甘，微苦，性温。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归心经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：补元气，补脾益肺， 生津，安神。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y10.png" alt="">
+				<section class="itemContent">
+					<span>【冬虫夏草】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性温，味甘。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肝经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：具有补虚损，益精气，止咳化痰，抗癌抗老，降血脂等功效。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y11.png" alt="">
+				<section class="itemContent">
+					<span>【灵芝】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：味甘，性温。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：各处。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：提高免疫力，降血糖，抗癌抗衰老，防心血管病，中风，高血压，护肝解毒。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y12.png" alt="">
+				<section class="itemContent">
+					<span>【补骨脂】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：苦，辛，温。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肾，脾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：补肾壮阳，固精缩尿， 肾虚腰痛，小儿遗尿，纳气平喘，温脾止泻，肾漏。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y13.png" alt="">
+				<section class="itemContent">
+					<span>【枸杞子】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：甘，平。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肾，脾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：滋补肝肾，益精明目，美容养颜，抗衰老，降血压，增强造血功能。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y14.png" alt="">
+				<section class="itemContent">
+					<span>【金佛手】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：辛，苦，温。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归脾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：健脾养胃，理气止痛， 胸闷气滞，消化不良，食欲不振，嗳气呕吐。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y15.png" alt="">
+				<section class="itemContent">
+					<span>【何首乌】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：微温，味苦，甘，涩。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肝、肾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：其块根入药可安神，养血，活络，解毒，制首乌可补益经血，乌须发，强筋骨，补肝肾。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y16.png" alt="">
+				<section class="itemContent">
+					<span>【肉豆蔻】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：辛，苦，温。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归胃经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：温中涩肠，行气消食。主虚泄，冷痢，脘腹胀痛，食少呕吐，宿食不消。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y17.png" alt="">
+				<section class="itemContent">
+					<span>【芍药】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性微寒，味苦，酸</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肝经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：镇痛，镇痉，祛瘀，通经，养血和营，缓急止痛，敛阴平肝。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y18.png" alt="">
+				<section class="itemContent">
+					<span>【枇杷】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性平味，甘酸。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肺经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：消食止渴，润肺止咳、下气，肺燥咳喘，吐逆。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y19.png" alt="">
+				<section class="itemContent">
+					<span>【五味子】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味:酸,温。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肺、肾、心经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效:敛肺滋肾,生津敛汗, 涩精止泻，宁心安神。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y20.png" alt="">
+				<section class="itemContent">
+					<span>【益母草】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性寒，味苦、辛。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归心经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：活血调经、利尿消肿、清热解毒。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y21.png" alt="">
+				<section class="itemContent">
+					<span>【龙葵】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：苦，寒。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肺、肾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：清热解毒，散结，利尿活血，消肿。治疗疮，痈肿，丹毒，跌打扭伤，慢性气管炎，急性肾炎。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y22.png" alt="">
+				<section class="itemContent">
+					<span>【地黄】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性寒，味甘。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归肺经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：热病伤阴，舌绛烦渴，温毒发斑，吐血，咽喉肿痛。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y23.png" alt="">
+				<section class="itemContent">
+					<span>【白术】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：苦，甘，温。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经：归脾，胃经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：补气健脾，燥湿利水，止汗，安胎。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y24.png" alt="">
+				<section class="itemContent">
+					<span>【黄芩】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：苦,寒。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经: 归肺,胆,胃,大肠经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：清热燥湿，泻火解毒，降压，保肝利胆，抑制肠管蠕动，止血，安胎等功效。</span>
+				</section>
+			</section>
+		</section>
+
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y25.png" alt="">
+				<section class="itemContent">
+					<span>【黄芪】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：性微温,味甘。</span>
+				</section>
+				<section class="itemContent">
+					<span>归经: 归肺，脾，肝，肾经。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：补气，止汗，利尿消肿，排脓。</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y26.png" alt="">
+				<section class="itemContent">
+					<span>【山楂】</span>
+				</section>
+				<section class="itemContent">
+					<span>性味：酸,甘,微温。</span>
+				</section>
+				<section class="itemContent">
+					<span>功效：消食健胃，行气散瘀， 有扩张冠状动脉，舒张血管，降脂降压强心的作用。</span>
+				</section>
+				<section class="itemContent">
+					<span>《西界》</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y27.png" alt="">
+				<section class="itemContent">
+					<span>《Sixology》</span>
+				</section>
+				<section class="itemContent">
+					<span>18 Oct 2008</span>
+				</section>
+				<section class="itemContent">
+					<span>总14首</span>
+				</section>
+				<section class="itemContent">
+					<span>《JJ陆》</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y28.png" alt="">
+				<section class="itemContent">
+					<span>《Hundred Days》</span>
+				</section>
+				<section class="itemContent">
+					<span>18 Dec 2009</span>
+				</section>
+				<section class="itemContent">
+					<span>总13首</span>
+				</section>
+				<section class="itemContent">
+					<span>《100天》</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y29.png" alt="">
+				<section class="itemContent">
+					<span>《She Says》</span>
+				</section>
+				<section class="itemContent">
+					<span>16 Nov 2010</span>
+				</section>
+				<section class="itemContent">
+					<span>孙燕姿</span>
+				</section>
+				<section class="itemContent">
+					<span>《她说》</span>
+				</section>
+			</section>
+		</section>
+		<section class="boxItem">
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<a href="javascript:void(0)"></a>
+			<section class="itemContentBox">
+				<img src="img/yaocai/y30.png" alt="">
+				<section class="itemContent">
+					<span>《Lost N Found》</span>
+				</section>
+				<section class="itemContent">
+					<span>31 Dec 2011</span>
+				</section>
+				<section class="itemContent">
+					<span>总12首</span>
+				</section>
+				<section class="itemContent">
+					<span>《学不会》</span>
+				</section>
+			</section>
+		</section>
+
+
+	</section>
+</body>
+
+</html>
