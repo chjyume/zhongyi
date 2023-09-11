@@ -1,0 +1,224 @@
+body{
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color:rgb(248,235,213);
+}
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: 'Proxima Nova';
+}
+/* HTML5 display-role reset for older browsers */
+.top-bar {
+  background-color: #33333358;
+  color: #d6b35a;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.top-bar h1 {
+  font-size: 7vh;
+  margin: 0;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+input{
+  font-family: 'Proxima Nova';
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration:none;
+  font-size: 16px;
+  color: #333;
+  /* 取消点击时背景色 */
+    -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+}
+/* custom css */
+div:active,section:active{
+  -webkit-tap-highlight-color: transparent;
+  -o-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+}
+.clearfix{
+  zoom: 1;
+}
+.clearfix:after{
+  display:block;
+  clear:both;
+  content:"";
+  visibility:hidden;
+  height:0;
+
+}
+
+
+.container {
+  width: 75%;
+  margin: 50px auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+.container .boxItem {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 0 15px 15px 0;
+}
+.container .boxItem > a {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.container .boxItem > a:first-of-type:hover,
+.container .boxItem > a:nth-child(2):hover,
+.container .boxItem > a:nth-child(3):hover,
+.container .boxItem > a:last-of-type:hover {
+  z-index: 11;
+  -moz-clip-path: none;
+  -webkit-clip-path: none;
+  clip-path: none;
+  clip: auto;
+}
+.container .boxItem > a:first-of-type {
+  -moz-clip-path: polygon(0 0, 100% 0, 50% 50%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 50%);
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  clip: rect(0px,150px,120px,0px);
+}
+.container .boxItem > a:first-of-type:hover ~ .itemContentBox > img {
+  -moz-transform: rotateX(-90deg);
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+.container .boxItem > a:first-of-type:hover ~ .itemContentBox .itemContent:first-of-type {
+  -moz-transform: rotateX(0);
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 1;
+}
+.container .boxItem > a:nth-child(2) {
+  -moz-clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+  clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+  clip: rect(0px,150px,150px,120px);
+}
+.container .boxItem > a:nth-child(2):hover ~ .itemContentBox > img {
+  -moz-transform: rotateY(-90deg);
+  -webkit-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+.container .boxItem > a:nth-child(2):hover ~ .itemContentBox .itemContent:nth-of-type(2) {
+  -moz-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+  opacity: 1;
+}
+.container .boxItem > a:nth-child(3) {
+  -moz-clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+  clip-path: polygon(0 100%, 50% 50%, 100% 100%);
+  clip: rect(120px,150px,150px,0px);
+}
+.container .boxItem > a:nth-child(3):hover ~ .itemContentBox > img {
+  -moz-transform: rotateX(90deg);
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+.container .boxItem > a:nth-child(3):hover ~ .itemContentBox .itemContent:nth-of-type(3) {
+  -moz-transform: rotateX(0);
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 1;
+}
+.container .boxItem > a:last-of-type {
+  -moz-clip-path: polygon(0 0, 50% 50%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 0 100%);
+  clip-path: polygon(0 0, 50% 50%, 0 100%);
+  clip: rect(0px,30px,150px,0px);
+}
+.container .boxItem > a:last-of-type:hover ~ .itemContentBox > img {
+  -moz-transform: rotateY(90deg);
+  -webkit-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+}
+.container .boxItem > a:last-of-type:hover ~ .itemContentBox .itemContent:last-of-type {
+  -moz-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+  opacity: 1;
+}
+.container .boxItem .itemContentBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.container .boxItem .itemContentBox > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  /*transform-style: preserve-3d;*/
+  transition: all 0.3s linear;
+  transform-origin: center center -75px;
+}
+.container .boxItem .itemContentBox .itemContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #928f8f;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform-origin: center center -75px;
+  color: #fff;
+  transition: all 0.3s linear;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  opacity: .2;
+}
+.container .boxItem .itemContentBox .itemContent > span {
+  transform: translateY(60px);
+}
+.container .boxItem .itemContentBox .itemContent:first-of-type {
+  transform: rotateX(90deg);
+}
+.container .boxItem .itemContentBox .itemContent:nth-of-type(2) {
+  transform: rotateY(90deg);
+}
+.container .boxItem .itemContentBox .itemContent:nth-of-type(3) {
+  transform: rotateX(-90deg);
+}
+.container .boxItem .itemContentBox .itemContent:last-of-type {
+  transform: rotateY(-90deg);
+}

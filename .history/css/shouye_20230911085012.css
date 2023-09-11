@@ -8,7 +8,6 @@
 	color: #fff;
 	padding: 10px;
 	text-align: center;
-	
 }
 
 .top-bar h1 {
@@ -125,7 +124,7 @@ a {
 	box-shadow: 0 2px 20px rgba(175, 175, 175, 0.3);
 }
 .ai_card ul li.active:before {
-	width: 30.5vh;
+	width: 31vh;
 	height: 2px;
 }
 .ai_card ul li.active .info {

@@ -8,7 +8,6 @@
 	color: #fff;
 	padding: 10px;
 	text-align: center;
-	
 }
 
 .top-bar h1 {
@@ -69,7 +68,7 @@ a {
 	content: "";
 	width: 0px;
 	height: 2px;
-	background:rgb(219,197,142);
+	background: #00b8ff;
 	top: 0;
 	left: 0;
 	position: absolute;
@@ -114,9 +113,9 @@ a {
 	margin-left: -60px;
 	bottom: 50px;
 	color: #fff;
-	background: rgb(219, 197, 142);
+	background: #00b8ff;
 	opacity: 0;
-	border-radius: 2vh;
+	border-radius: 2px;
 	transition: 0.5s;
 	font-size: 16px;
 	text-align: center;
@@ -125,7 +124,7 @@ a {
 	box-shadow: 0 2px 20px rgba(175, 175, 175, 0.3);
 }
 .ai_card ul li.active:before {
-	width: 30.5vh;
+	width: 398px;
 	height: 2px;
 }
 .ai_card ul li.active .info {
