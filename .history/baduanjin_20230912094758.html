@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>八段锦跟练</title>
+    <link rel="stylesheet" type="text/css" href="css/baduanjin.css">
+</head>
+
+<body>
+    <header class="top-bar">
+        <h1>八段锦视频跟练</h1>
+    </header>
+    <div class="container">
+        <div class="left">
+            <!-- 左侧内容 -->
+            <video id="vo" controls src="video/baduanjin.mp4"></video>
+        </div>
+        <div class="right">
+            <!-- 右侧内容 -->
+            <h2>视频分段跳转</h2>
+            <div class="button" onclick="bt1()">预备式</div>
+            <div class="button" onclick="hello3()">第一式</div>
+            <div class="button" onclick="hello3()">第二式</div>
+            <div class="button">第三式</div>
+            <div class="button">第四式</div>
+            <div class="button">第五式</div>
+            <div class="button">第六式</div>
+            <div class="button">第七式</div>
+            <div class="button">第八式</div>
+            <div class="button">收式</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+    function bt1() {
+        $("video").prop("currentTime", 10);
+    }
+</script>
+
+</html>

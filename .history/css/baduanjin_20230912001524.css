@@ -1,0 +1,27 @@
+ html,
+ body {
+     height: 100%;
+     margin: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ #left {
+     position: relative;
+     flex: 7;
+     left: -5vh;
+     margin: 10vh;
+     padding: 2vh;
+     border-radius: 2vh;
+     border: 0.3vh solid #000;
+ }
+
+ #right {
+     flex: 3;
+     border: 2px solid #ff0000;
+ }
+
+ #video {
+     width: 100%;
+ }
