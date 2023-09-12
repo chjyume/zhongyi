@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>诊疗--针灸</title>
+    <title>帮我针灸</title>
+    
+    
     <style>
         body {
             background-image: url("img/jiu1.png");
@@ -14,13 +16,23 @@
         }
         
         #pulse {
-            width: 50%;
-            height: 48%;
+            width: 45%;
+            height: 44%;
             position: fixed;
-            top: calc(55%);
-            left: calc(50%);
+            top: calc(60%);
+            left: calc(55%);
             z-index: 1;
-            transform: rotatex(37deg);
+            transform: rotatex(28deg);
+        }
+        
+        #zhongyi{
+            width: 80%;
+            height: 130%;
+            position: fixed;
+            top: calc(10%);
+            left: calc(-20%);
+            z-index: 1;
+            display: none; /* 初始状态隐藏中医图案 */
         }
         
         #zhen {
@@ -28,7 +40,7 @@
             height: 20%;
             position: fixed;
             top: calc(20%);
-            left: calc(80%);
+            left: calc(70%);
             z-index: 2;
         }
         
@@ -38,25 +50,76 @@
             height: 200px;
             margin: 450px 0 0 1200px; /* 调整边框位置，向右下移动 */
             z-index: 2;
-            border: 2px dashed gray;  /* 添加虚线边框样式 */
-            border-radius: 10px;  /* 添加圆角边框样式 */
-            background-color: rgba(255, 255, 255, 0.7);  /* 添加半透明的背景颜色 */
         }
-
+    
         #target img {
             width: 200px;
             height: 150px;
             margin: 10px; /* 调整图片与边框的距离 */
         }
-
+    
         .hidden {
             display: none;
         }
-
-        #message {
-            display: none; /* 移除提示信息的显示 */
+                @keyframes bounce {
+        0%, 100% { transform: translateY(-30px); }
+        25%, 75% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
         }
+
+
+
+ 
+
+        .bubble {
+            position: fixed;
+            max-width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: bounce 1s 2;
+        }
+
+        .left {
+            position: relative;
+            top: 20%;
+            left: 10%;
+            background-color: #f6f6f6;
+        }
+
+        .left::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            margin-top: -4px;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 8px solid #f6f6f6;
+        }
+
+        .right {
+            position: relative;
+            top: 30%;
+            left: 20%;
+            background-color: #e2f5fe;
+        }
+
+        .right::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -8px;
+            margin-top: -4px;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-right: 8px solid #e2f5fe;
+        }
+
+   
+  
     </style>
+    
     <script>
         function allowDrop(event) {
             event.preventDefault();
@@ -83,12 +146,43 @@
 
             // 将新的图片元素添加到目标区域中
             event.target.appendChild(img);
+            
+            // 显示中医图案
+            var zhongyiImg = document.getElementById("zhongyi");
+            zhongyiImg.style.display = "block";
         }
+                function showBubbleAndImage() {
+            var bubble1 = document.getElementById("bubble1"); // 获取第一个气泡
+            var zhongyiImg = document.getElementById("zhongyi"); // 获取中医图案的img元素
+
+            bubble1.classList.remove("hidden"); // 移除隐藏类名，显示第一个气泡
+            zhongyiImg.style.display = "block"; // 显示"zhongyi.png"
+        }
+        function showSecondBubble() {
+    var bubble2 = document.getElementById("bubble2"); // 获取第二个气泡
+
+    setTimeout(function() {
+        bubble2.classList.remove("hidden"); // 移除隐藏类名，显示第二个气泡
+    }, 3000); // 延迟3秒后显示第二个气泡
+}
     </script>
 </head>
 <body>
     <img id="pulse" src="img/zhenjiu2.png">
     <div id="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-    <img id="zhen" src="img/zhenjiu3.png" draggable="true" ondragstart="drag(event)">
+    <img id="zhen" src="img/zhenjiu3.png" draggable="true" ondragstart="drag(event)" style="cursor: pointer;" ondragend="showBubbleAndImage()">
+    <img id="zhongyi" src="img/zhongyi.png">
+    <div id="bubble1" class="bubble right hidden" onclick="showSecondBubble()">
+        <p class="mb-0">这是第一个气泡。</p>
+    </div>
+    <div id="bubble2" class="bubble left hidden" onclick="showThirdBubble()">
+        <p class="mb-0">这是第二个气泡。</p>
+    </div>
+    <div id="bubble3" class="bubble left hidden">
+        <p class="mb-0">这是第三个气泡。</p>
+    </div>
+    
 </body>
 </html>
+
+
