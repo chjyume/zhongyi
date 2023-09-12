@@ -86,8 +86,9 @@ function showNextText() {
           const overlay = document.querySelector('#overlay');
           textDiv.addEventListener('click', () => {
             overlay.style.display = 'flex';
-            endMarker.style.display = 'none';
+                        endMarker.style.display = 'none';
             textDiv.style.display = 'none'; // 隐藏textDiv
+
             dynamicTextDiv.style.display = 'none';
             chosenDiv.style.display = 'none';
           });  
