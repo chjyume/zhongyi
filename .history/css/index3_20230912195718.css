@@ -168,12 +168,11 @@
 }
 
 .btn1 {
-  font-size: 3vh;
   border-radius:2vh;
   position: relative;
-  color: #000000;
-  background: rgb(219, 197, 142);
-  border: 1px solid rgb(219, 197, 142);
+  color: #fff;
+  background: #17A086;
+  border: 1px solid #17A086;
   -webkit-transition: background-color .3s, color .3s;
   transition: background-color .3s, color .3s
 }
@@ -194,8 +193,8 @@
 }
 
 .btn1:hover {
-  background: rgb(248, 235, 213);
-  border-color: rgb(248, 235, 213);
+  background: #1DCBA8;
+  border-color: #1DCBA8;
   -webkit-transition: background-color .1s .3s, color .1s .3s;
   transition: background-color .1s .3s, color .1s .3s;
   -webkit-animation: anim-moema-1 .3s forwards;

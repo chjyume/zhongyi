@@ -1,0 +1,19 @@
+.top-bar {
+background-color: #33333358;
+color: #fff;
+padding: 3vh;
+text-align: center;
+top: 0;
+left: 0;
+width: 100%;
+box-sizing: border-box;
+}
+
+.top-bar h1 {
+font-size: 7vh;
+margin: 0;
+}
+#img1{
+    justify-content: center;
+        align-items: center;
+}
