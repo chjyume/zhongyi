@@ -48,7 +48,7 @@
     background-color: transparent;
     backdrop-filter: blur(1vh);
     z-index: 5;
-
+    top:0;
 }
 .bubble{
   margin: 8vh;
