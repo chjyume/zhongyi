@@ -13,22 +13,18 @@ body{
   font-family: 'Proxima Nova';
 }
 /* HTML5 display-role reset for older browsers */
- .top-bar {
-   position: absolute;
-   background-color: #33333358;
-   color: #fff;
-   padding: 3vh;
-   text-align: center;
-   top: 0;
-   left: 0;
-   width: 100%;
-   box-sizing: border-box;
- }
+.top-bar {
+  background-color: #33333358;
+  color: #fff;
+  padding: 5vh;
+  text-align: center;
 
- .top-bar h1 {
-   font-size: 7vh;
-   margin: 0;
- }
+}
+
+.top-bar h1 {
+  font-size: 7vh;
+  margin: 0;
+}
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
   display: block;

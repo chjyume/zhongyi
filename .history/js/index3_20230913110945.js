@@ -65,6 +65,14 @@ function showNextText() {
           var text2 = document.getElementById('text2');
           text2.style.display = 'none';
         }
+
+
+
+        //句末三角
+        if (i === currentText.length) {
+          var endMarker = document.getElementById('endMarker');
+          endMarker.style.display = 'block';
+        }
       } else {
         clearInterval(typing);
       }
