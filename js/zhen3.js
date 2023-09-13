@@ -1,8 +1,8 @@
 function showContent(selectedOption) {
     var responseMap = {
-      "请您把手伸出来": "不是音乐治疗吗？怎么也要把脉",
-      "音乐治疗也需要辩证，只有把中医的辩证论治和音乐治疗结合起来，才能取得更好的效果": "原来是这样啊",
-      "从脉象来讲你是心肝火旺啊，所以建议一下你做音乐治疗，接下来去隔壁音乐治疗室，音乐治疗师会根据评估，给你做出一个专属的音乐治疗方案": "谢谢医生"
+      "啊，这是什么，好香啊": "你闻得香味是中药里的佩兰和藿香，我们又加了酸枣仁和石菖蒲，所以对睡眠很有帮助",
+      "还有这种功效？": "是的",
+      "没想到今时今日我竟然会对一包芍药念念不忘": "我就知道你会喜欢的"
     };
     
     var response = responseMap[selectedOption];
@@ -14,7 +14,7 @@ function showContent(selectedOption) {
       var userBubble = document.createElement("div");
       userBubble.className = "bubble left-bubble";
       userBubble.innerHTML = `
-        <p>中医:</p>
+        <p>我:</p>
         <p></p>
       `;
       conversation.appendChild(userBubble);
@@ -32,7 +32,7 @@ function showContent(selectedOption) {
           var botBubble = document.createElement("div");
           botBubble.className = "bubble right-bubble";
           botBubble.innerHTML = `
-            <p>我:</p>
+            <p>中医:</p>
           `;
           conversation.appendChild(botBubble);
   
