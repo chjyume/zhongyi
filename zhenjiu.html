@@ -2,28 +2,48 @@
 <html>
 	<head>
         <meta charset="utf-8" />
-		<title>诊疗--针灸</title>
+		<title>帮我针灸</title>
 
         <link href="css\zhenjiu.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="family\font.css">
 	</head>
 	<style>
-	body {
-    background-image: url("img/jiu1.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto; /* 放大背景图 */
-    height: 100px; /* 设置页面高度 */
-    width: 100%; /* 设置页面宽度 */
-    position: absolute;
-    left: -20px;
-    top: 0;
-}
+	
+        body {
+            background-image: url("img/jiu1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
 
 		
 	</style>
 	<body>
         <img id="pulse" src="img/zhenjiu2.png">
+    <div id="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="zhen" src="img/zhenjiu3.png" draggable="true" ondragstart="drag(event)" style="cursor: pointer;" ondragend="showBubbleAndImage()">
+    <img id="zhongyi" src="img/zhongyi.png">
+    <script>
+        showBubbleAndImage();
+    </script>
+    <div id="bubble1" class="bubble right hidden" onclick="showSecondBubble()" style="font-size: x-large;">
+        <p class="mb-0">啊，还没开始扎针吗？</p>
+    </div>
+    <div id="bubble2" class="bubble left hidden" onclick="showThirdBubble()" style="font-size: x-large;z-index: 7;">
+        <p class="mb-0">先生，刚刚你都睡一个小时了</p>
+    </div>
+    
+    
+    <div id="bubble3" class="bubble right hidden" onclick="showFourthBubble()" style="font-size: x-large;">
+        <p class="mb-0">哇偶，真的不痛欸，没想到我居然可以在这么窄的床上睡着了</p>
+    </div>
+    <div id="bubble4" class="bubble left hidden" style="font-size: x-large;" onclick="goToNextPage()">
+        <p class="mb-0">可以期待第二个项目了</p>
+    </div>
 		
 	</body>
-	
+	<script src="js/zhenjiu.js"></script>
 </html>

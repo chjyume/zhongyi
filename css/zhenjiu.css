@@ -1,12 +1,112 @@
-
 #pulse {
-    width: 47%;
-    height: 45%;
+    width: 45%;
+    height: 44%;
     position: fixed;
-    top: calc(54%);
-    left: calc(15%);
+    top: calc(60%);
+    left: calc(55%);
     z-index: 1;
-    transform: rotateX(50deg) rotateY(deg); /* 上下和左右翻转 */
+    transform: rotatex(28deg);
 }
 
-<img id="pulse" src="img/zhenjiu2.png">
+#zhongyi{
+    width: 80%;
+    height: 130%;
+    position: fixed;
+    top: calc(10%);
+    left: calc(-20%);
+    z-index: 1;
+    display: none; /* 初始状态隐藏中医图案 */
+}
+
+#zhen {
+    width: 20%;
+    height: 20%;
+    position: fixed;
+    top: calc(20%);
+    left: calc(70%);
+    z-index: 2;
+}
+
+#target {
+    position: absolute;
+    width: 220px;
+    height: 200px;
+    margin: 450px 0 0 1200px; /* 调整边框位置，向右下移动 */
+    z-index: 2;
+}
+
+#target img {
+    width: 200px;
+    height: 150px;
+    margin: 10px; /* 调整图片与边框的距离 */
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(-30px); }
+    25%, 75% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.bubble {
+    position: absolute;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    animation: bounce 1s 2;
+    margin-top: 250px;
+}
+
+.left {
+    position: relative;
+    top: 60%;
+    left: calc(180%);
+    background-color: #f6f6f6;
+    z-index: 5;
+}
+
+.left::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    margin-top: -4px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 8px solid #f6f6f6;
+    
+}
+    
+.right {
+    position: relative;
+    top: 150%;
+    left: calc(320%);
+    background-color: #e2f5fe;
+    z-index: 6;
+}
+
+.right::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    margin-top: -4px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 8px solid #e2f5fe;
+}
+
+.bubble.right::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    margin-top: -4px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 8px solid #f6f6f6;
+}
