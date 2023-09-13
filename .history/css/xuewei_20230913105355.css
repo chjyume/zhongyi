@@ -4,7 +4,7 @@ body{
     padding: 0;
 }
 .top-bar {
-    position: absolute;
+    position: relative;
 background-color: #33333358;
 color: #fff;
 padding: 2.5vh;

@@ -1,0 +1,16 @@
+.return-button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    z-index: 100;
+    margin-top: 3vh;
+    margin-left: 3vh;
+}
+
+.return-image {
+    width: 10px;
+    /* 调整为适当的宽度 */
+    height: 10px;
+    /* 调整为适当的高度 */
+}

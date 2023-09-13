@@ -65,6 +65,9 @@ function showNextText() {
           var text2 = document.getElementById('text2');
           text2.style.display = 'none';
         }
+
+
+        
       } else {
         clearInterval(typing);
       }
