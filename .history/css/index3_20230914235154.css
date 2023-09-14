@@ -125,33 +125,12 @@
 #textBox {
   height: 100%;
   overflow-y: auto;
-} 
-#jie1{
-
-  position: absolute;
-  justify-content: center;
+}
+#jieshao1{
   align-items: flex-end;
-  top: 85vh;
+    justify-content: center;
+    top: 180vh;
   color:rgb(248, 235, 213);
-}
-#jie2{
-
-  position: absolute;
-  justify-content: center;
-  align-items: flex-end;
-  top: 85vh;
-  color: rgb(248, 235, 213);
-}
-#jie3 {
-
-  position: absolute;
-  justify-content: center;
-  align-items: flex-end;
-  top: 85vh;
-  color: rgb(248, 235, 213);
-}
-.hidden{
-    display: none;
 }
 #overlay {
   position: fixed;

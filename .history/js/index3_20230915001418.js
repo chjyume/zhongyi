@@ -107,22 +107,3 @@ showNextText();
             });
  });
 
-$(function() {
-  $("#b1").mouseover(function() {
-    $("#jie1").removeClass("hidden");
-  }).mouseout(function() {
-    $("#jie1").addClass("hidden");
-  });
-
-  $("#b2").mouseover(function() {
-    $("#jie2").removeClass("hidden");
-  }).mouseout(function() {
-    $("#jie2").addClass("hidden");
-  });
-
-  $("#b3").mouseover(function() {
-    $("#jie3").removeClass("hidden");
-  }).mouseout(function() {
-    $("#jie3").addClass("hidden");
-  });
-});

@@ -107,22 +107,32 @@ showNextText();
             });
  });
 
-$(function() {
-  $("#b1").mouseover(function() {
-    $("#jie1").removeClass("hidden");
-  }).mouseout(function() {
-    $("#jie1").addClass("hidden");
-  });
+ 
+var btn1 = document.getElementById("b1"); 
+var jie1 = document.getElementById("jie1");
+          var btn2 = document.getElementById("b2");
+          var jie2 = document.getElementById("jie2");
+          var btn3 = document.getElementById("b3");
+          var jie3 = document.getElementById("jie3");
 
-  $("#b2").mouseover(function() {
-    $("#jie2").removeClass("hidden");
-  }).mouseout(function() {
-    $("#jie2").addClass("hidden");
-  });
+          // 当鼠标悬停在按钮上时显示div
+          btn1.addEventListener("mouseover", function() {
+            jieshao1.style.display = "block";
+          });
+          btn2.addEventListener("mouseover", function() {
+            jieshao2.style.display = "block";
+          });
+          btn3.addEventListener("mouseover", function() {
+            jieshao3.style.display = "block";
+          });
 
-  $("#b3").mouseover(function() {
-    $("#jie3").removeClass("hidden");
-  }).mouseout(function() {
-    $("#jie3").addClass("hidden");
-  });
-});
+          // 当鼠标离开按钮时隐藏div
+          btn1.addEventListener("mouseout", function() {
+            jieshao1.style.display = "none";
+          });
+          btn2.addEventListener("mouseout", function() {
+            jieshao2.style.display = "none";
+          });
+          btn3.addEventListener("mouseout", function() {
+            jieshao3.style.display = "none";
+          });

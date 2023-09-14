@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>诊疗--针灸</title>
+
+        <link href="css\zhen1.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="family\font.css">
+		<link rel="stylesheet" type="text/css" href="css/return.css">
+	</head>
+	<style>
+	body
+	{
+        background-image:url("img/img4-1.png");
+		background-repeat:no-repeat;
+        height: 90%;
+        width: 90%;
+        background-size:cover;
+        position:absolute;
+        left:0;
+        top:0;
+	}
+		
+	</style>
+	<body>
+		<button class="return-button">
+			<img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='/shouye.html'">
+		  </button>
+        <img id="pulse" src="img/img4-2.png">
+		<div id="conversation" style="height: 700px; margin-right: 45%; overflow-y: scroll;">
+			<div class="special-bubble">
+			  <div class="triangle"></div>
+			  <p>把脉交流区</p>
+			</div>
+		  </div>
+		  
+		  <div class="options-container">
+			<div style="display: flex; flex-direction: column; align-items: center;">
+			  <button class="option-button custom-option" onclick="showContent('请您把手伸出来')" data-option="请您把手伸出来">请您把手伸出来</button>
+			  <button class="option-button custom-option" onclick="showContent('你这个失眠应该有挺长时间了吧，主要什么症状，做梦多不多？')" data-option="你这个失眠应该有挺长时间了吧，主要什么症状，做梦多不多？">你这个失眠应该有挺长时间了吧，主要什么症状，做梦多不多？</button>
+			  <button class="option-button custom-option" onclick="showContent('这属于中医中的心肝火旺，趴下来吧，躺好')" data-option="这属于中医中的心肝火旺，趴下来吧，躺好">这属于中医中的心肝火旺，趴下来吧，躺好</button>
+			</div>
+		  </div>
+		 
+	</body>
+	<script src="js/zhen1.js"></script>
+</html>

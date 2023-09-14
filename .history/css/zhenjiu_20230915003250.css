@@ -30,8 +30,8 @@
 #target {
     position: absolute;
     width: 220px;
-    height: 200px;
-    margin: 360px 0 0 1200px; /* 调整边框位置，向右下移动 */
+    height: 180px;
+    margin: 450px 0 0 1200px; /* 调整边框位置，向右下移动 */
     z-index: 2;
 }
 

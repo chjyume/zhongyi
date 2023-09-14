@@ -129,24 +129,29 @@
 </head>
 
 <body>
+  <button class="return-button">
+    <img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='shouye.html'">
+  </button>
+  <div class="container" style="position:relative;">
+    <img id=" yao1" src="img/yao1.png">
+    <img id="yao2" src="img/yao2.png">
+    <img id="yao3" src="img/yao3.png">
+    <img id="wan" src="img/kongwan.png">
+    <img id="wan2" class="kongwan" src="img/kongwan2.png">
+    <div id="tip">点击药材制作香囊</div>
 
-  <img id="yao1" src="img/yao1.png">
-  <img id="yao2" src="img/yao2.png">
-  <img id="yao3" src="img/yao3.png">
-  <img id="wan" src="img/kongwan.png">
-  <img id="wan2" class="kongwan" src="img/kongwan2.png">
-  <div id="tip">点击药材制作香囊</div>
+    <div id="imageContainer"></div>
 
-  <div id="imageContainer"></div>
-
-  <div class="btn" onclick="toggleImage()" style="display:none;">
-    <div class="btn-wrapper">
-      <svg height="45" width="150" xmlns="#">
-        <rect id="button" height="45" width="150"></rect>
-      </svg>
-      <div id="text"> <a>生成香囊</a> </div>
+    <div class="btn" onclick="toggleImage()" style="display:none;">
+      <div class="btn-wrapper">
+        <svg height="45" width="150" xmlns="#">
+          <rect id="button" height="45" width="150"></rect>
+        </svg>
+        <div id="text"> <a>生成香囊</a> </div>
+      </div>
     </div>
   </div>
+
 
   <script>
     var yao1 = document.getElementById("yao1");

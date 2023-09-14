@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8" />
   <title>制作香囊</title>
@@ -14,31 +13,26 @@
       background-color: rgb(248, 235, 213);
     }
 
-    #yao1,
-    #yao2,
-    #yao3 {
+    #yao1, #yao2, #yao3 {
       width: 13%;
       height: 13%;
       margin-top: 506px;
       z-index: 2;
       margin-left: 13px;
     }
-
-    #wan {
+    #wan{
       width: 42%;
       height: 42%;
       z-index: 1;
       margin-top: 500px;
       margin-left: -630px;
     }
-
     #wan2 {
       width: 45%;
       height: 45%;
       margin-top: 10px;
       margin-left: -608px;
     }
-
     #tip {
       position: absolute;
       top: 400px;
@@ -51,27 +45,27 @@
       font-size: 24px;
       display: none;
     }
-
-    #newImage {
-      width: 60%;
-      height: 60%;
-      left: calc(35%);
-      z-index: 999;
+    
+    #newImage{
+        width: 60%;
+        height: 60%;
+        left: calc(35%);
+        z-index: 999;
     }
-
-    #imageContainer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      z-index: 2;
-    }
+    
+      #imageContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 2;
+  }
 
 
     #imageContainer img {
@@ -79,7 +73,7 @@
       max-height: 90%;
       object-fit: contain;
     }
-
+    
     .btn-wrapper {
       z-index: 2;
       position: absolute;
@@ -117,37 +111,39 @@
       text-decoration: none;
       font-weight: 400;
     }
+    .btn{
+    display: flex;
+    position: absolute;
+    top: 45%;
+    right: 25%;
 
-    .btn {
-      display: flex;
-      position: absolute;
-      top: 45%;
-      right: 25%;
+}
 
-    }
   </style>
 </head>
-
 <body>
-
+  <button class="return-button">
+    <img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='shouye.html'">
+    </button>
+  
   <img id="yao1" src="img/yao1.png">
   <img id="yao2" src="img/yao2.png">
   <img id="yao3" src="img/yao3.png">
   <img id="wan" src="img/kongwan.png">
   <img id="wan2" class="kongwan" src="img/kongwan2.png">
   <div id="tip">点击药材制作香囊</div>
-
+  
   <div id="imageContainer"></div>
 
   <div class="btn" onclick="toggleImage()" style="display:none;">
-    <div class="btn-wrapper">
+    <div class="btn-wrapper"> 
       <svg height="45" width="150" xmlns="#">
         <rect id="button" height="45" width="150"></rect>
       </svg>
       <div id="text"> <a>生成香囊</a> </div>
     </div>
   </div>
-
+  
   <script>
     var yao1 = document.getElementById("yao1");
     var yao2 = document.getElementById("yao2");
@@ -172,43 +168,42 @@
       } else if (currentImage === 3) {
         wan2.src = "img/yao3-3-3.png";
         currentImage = 1;
-
+        
         // 显示新加的图片
-        /* var newImage = document.getElementById("newImage");
-         newImage.src = "img/newImage.png";
-         newImage.style.display = "block";*/
-
+       /* var newImage = document.getElementById("newImage");
+        newImage.src = "img/newImage.png";
+        newImage.style.display = "block";*/
+        
         // 显示按钮
         button.style.display = "block";
       }
-
+      
       tip.style.display = "none";
     }
 
-    setTimeout(function () {
+    setTimeout(function() {
       tip.style.display = "block";
     }, 500);
     function showNewImage() {
-      // 创建新图片元素
-      var newImage = document.createElement("img");
-      newImage.src = "img/newImage.png";
-      newImage.id = "newImage";
+  // 创建新图片元素
+  var newImage = document.createElement("img");
+  newImage.src = "img/newImage.png";
+  newImage.id = "newImage";
 
-      // 获取图像容器元素
-      var imageContainer = document.getElementById("imageContainer");
+  // 获取图像容器元素
+  var imageContainer = document.getElementById("imageContainer");
 
-      // 添加新图片到图像容器中
-      imageContainer.appendChild(newImage);
-      // 显示图像容器
-      imageContainer.style.display = "flex";
-      setTimeout(function () {
-        window.location.href = "zhen3.html";
-      }, 3000);
-    }
+  // 添加新图片到图像容器中
+  imageContainer.appendChild(newImage);
+  // 显示图像容器
+  imageContainer.style.display = "flex";
+  setTimeout(function() {
+    window.location.href = "zhen3.html";
+  }, 3000);
+}
 
-
-
+    
+    
   </script>
 </body>
-
 </html>

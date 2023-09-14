@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>诊疗--</title>
+
+        <link href="css\zhen1.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="family\font.css">
+		<link rel="stylesheet" type="text/css" href="css/return.css">
+	</head>
+	<style>
+	body
+	{
+        background-image:url("img/xiang1-1.png");
+		background-repeat:no-repeat;
+        height: 90%;
+        width: 90%;
+        background-size:cover;
+        position:absolute;
+        left:0;
+        top:0;
+	}
+	#pulse{
+		width: 40%;
+		height: 80%;
+		position: fixed;
+		top: calc(30%);
+		left: calc(55%);
+		z-index: 1;
+	}
+	</style>
+	<body>
+        <button class="return-button">
+			<img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='/shouye.html'">
+			</button>
+		<div id="conversation" style="height: 520px; margin-right: 45%; overflow-y: scroll;position: relative;">
+			<div class="special-bubble">
+			  <div class="triangle"></div>
+			  <p>香囊区</p>
+			</div>
+		  </div>
+		  <img id="pulse" src="img/zhongyi2.png">
+		  <div class="options-container">
+			<div style="display: flex; flex-direction: column; align-items: center;">
+			  <button class="option-button custom-option" onclick="showContent('啊，这是什么，好香啊')" data-option="啊，这是什么，好香啊">啊，这是什么，好香啊</button>
+			  <button class="option-button custom-option" onclick="showContent('还有这种功效？')" data-option="还有这种功效？">还有这种功效？</button>
+			  <button class="option-button custom-option" onclick="showContent('没想到今时今日我竟然会对一包芍药念念不忘')" data-option="没想到今时今日我竟然会对一包芍药念念不忘">没想到今时今日我竟然会对一包芍药念念不忘</button>
+			</div>
+		  </div>
+		  
+	</body>
+	<script src="js/zhen3.js"></script>
+</html>
