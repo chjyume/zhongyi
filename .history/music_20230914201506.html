@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>音乐治疗</title>
     <link rel="stylesheet" type="text/css" href="css/return.css">
-
+	
     <style>
         body {
             background-image: url("img/music.png");
@@ -15,8 +14,7 @@
             left: 0;
             top: 0;
         }
-
-        #pulse {
+        #pulse{
             width: 55%;
             height: 65%;
             position: fixed;
@@ -24,8 +22,7 @@
             left: calc(0%);
             z-index: 1;
         }
-
-        #pulse2 {
+        #pulse2{
             width: 46%;
             height: 58%;
             position: fixed;
@@ -33,8 +30,7 @@
             left: calc(0%);
             z-index: 1;
         }
-
-        #nvzhongyi {
+        #nvzhongyi{
             width: 40%;
             height: 95%;
             position: fixed;
@@ -42,22 +38,10 @@
             left: calc(50%);
             z-index: 1;
         }
-
         @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(-30px);
-            }
-
-            25%,
-            75% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
+            0%, 100% { transform: translateY(-30px); }
+            25%, 75% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         .bubble {
@@ -74,8 +58,7 @@
         .left {
             position: relative;
             top: 90%;
-            left: 250%;
-            /* 调整左侧气泡的位置 */
+            left: 250%; /* 调整左侧气泡的位置 */
             background-color: #f6f6f6;
             z-index: 5;
         }
@@ -95,8 +78,7 @@
         .right {
             position: relative;
             top: 150%;
-            left: 50%;
-            /* 调整右侧气泡的位置 */
+            left: 50%; /* 调整右侧气泡的位置 */
             background-color: #e2f5fe;
             z-index: 6;
         }
@@ -122,33 +104,30 @@
             border-bottom: 4px solid transparent;
             border-left: 8px solid #f6f6f6;
         }
-
         #bubble4 {
             top: calc(75%);
             left: calc(100%);
         }
-
         #bubble3 {
             top: calc(65%);
             left: calc(200%);
         }
-
         #bubble2 {
             top: calc(75%);
             left: calc(250%);
         }
-
         #bubble1 {
             top: calc(65%);
             left: calc(500%);
         }
+        
+
     </style>
 </head>
-
 <body>
     <button class="return-button">
-        <img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='shouye.html'">
-    </button>
+        <img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='/shouye.html'">
+        </button>
     <img id="pulse" src="img/music1.png" onclick="changeImage()">
     <img id="pulse2" src="img/music2.png" style="display:none;">
     <audio id="music" src="video/music.mp3"></audio>
@@ -215,5 +194,4 @@
         }
     </script>
 </body>
-
 </html>
