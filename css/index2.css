@@ -156,7 +156,7 @@ body{
 }
 
 .bubble3 {
-  position: relative;
+  position: absolute;
   padding: 2.5vh 2vh;
   top: 70vh;
   left: 70vh;
