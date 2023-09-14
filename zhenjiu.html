@@ -6,6 +6,7 @@
 
         <link href="css\zhenjiu.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="family\font.css">
+        <link rel="stylesheet" type="text/css" href="css/return.css">
 	</head>
 	<style>
 	
@@ -21,7 +22,11 @@
 
 		
 	</style>
-	<body>
+	<body onload="showTip()" onmousemove="hideTip()">
+        <button class="return-button">
+            <img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='shouye.html'">
+            </button>
+        
         <img id="pulse" src="img/zhenjiu2.png">
     <div id="target" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     <img id="zhen" src="img/zhenjiu3.png" draggable="true" ondragstart="drag(event)" style="cursor: pointer;" ondragend="showBubbleAndImage()">
@@ -29,21 +34,23 @@
     <script>
         showBubbleAndImage();
     </script>
-    <div id="bubble1" class="bubble right hidden" onclick="showSecondBubble()" style="font-size: x-large;">
+    <div id="bubble1" class="bubble right hidden" onclick="showSecondBubble()" style="font-size: large;">
         <p class="mb-0">啊，还没开始扎针吗？</p>
     </div>
-    <div id="bubble2" class="bubble left hidden" onclick="showThirdBubble()" style="font-size: x-large;z-index: 7;">
-        <p class="mb-0">先生，刚刚你都睡一个小时了</p>
+    <div id="bubble2" class="bubble left hidden" onclick="showThirdBubble()" style="font-size: large;z-index: 7;">
+        <p class="mb-0">先生，刚刚你都睡一个小时了！</p>
     </div>
     
     
-    <div id="bubble3" class="bubble right hidden" onclick="showFourthBubble()" style="font-size: x-large;">
-        <p class="mb-0">哇偶，真的不痛欸，没想到我居然可以在这么窄的床上睡着了</p>
+    <div id="bubble3" class="bubble right hidden" onclick="showFourthBubble()" style="font-size: large;">
+        <p class="mb-0">哇偶，真的不痛欸，没想到我居然可以在这么窄的床上睡着了。</p>
     </div>
-    <div id="bubble4" class="bubble left hidden" style="font-size: x-large;" onclick="goToNextPage()">
-        <p class="mb-0">可以期待第二个项目了</p>
+    <div id="bubble4" class="bubble left hidden" style="font-size: large;" onclick="goToNextPage()">
+        <p class="mb-0">可以期待第二个项目了！</p>
     </div>
-		
+    
+      <div id="tip">请帮我针灸！</div>
 	</body>
+    
 	<script src="js/zhenjiu.js"></script>
 </html>

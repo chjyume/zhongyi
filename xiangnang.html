@@ -5,6 +5,7 @@
   <title>制作香囊</title>
   <link href="css\zhenjiu.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="family\font.css">
+  <link rel="stylesheet" type="text/css" href="css/return.css">
   <style>
     body {
       display: flex;
@@ -35,7 +36,7 @@
     #tip {
       position: absolute;
       top: 400px;
-      left: 50%;
+      left: 45%;
       transform: translateX(-50%);
       background-color: rgb(229, 174, 247);
       color: black;
@@ -121,13 +122,16 @@
   </style>
 </head>
 <body>
+  <button class="return-button">
+    <img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='shouye.html'">
+    </button>
+  
   <img id="yao1" src="img/yao1.png">
   <img id="yao2" src="img/yao2.png">
   <img id="yao3" src="img/yao3.png">
   <img id="wan" src="img/kongwan.png">
   <img id="wan2" class="kongwan" src="img/kongwan2.png">
   <div id="tip">点击药材制作香囊</div>
-  
   
   <div id="imageContainer"></div>
 

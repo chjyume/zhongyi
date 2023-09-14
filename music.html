@@ -2,16 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>点击图片替换和音乐播放</title>
+    <title>音乐治疗</title>
+    <link rel="stylesheet" type="text/css" href="css/return.css">
+	
     <style>
         body {
+            background-image: url("img/music.png");
             background-repeat: no-repeat;
             background-size: cover;
             position: absolute;
             left: 0;
             top: 0;
         }
-        #pulse {
+        #pulse{
             width: 55%;
             height: 65%;
             position: fixed;
@@ -19,14 +22,132 @@
             left: calc(0%);
             z-index: 1;
         }
+        #pulse2{
+            width: 46%;
+            height: 58%;
+            position: fixed;
+            top: calc(42%);
+            left: calc(0%);
+            z-index: 1;
+        }
+        #nvzhongyi{
+            width: 40%;
+            height: 95%;
+            position: fixed;
+            top: calc(14%);
+            left: calc(50%);
+            z-index: 1;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(-30px); }
+            25%, 75% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .bubble {
+            position: absolute;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: bounce 1s 2;
+            margin-top: 250px;
+            display: none;
+        }
+
+        .left {
+            position: relative;
+            top: 90%;
+            left: 250%; /* 调整左侧气泡的位置 */
+            background-color: #f6f6f6;
+            z-index: 5;
+        }
+
+        .left::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -8px;
+            margin-top: -4px;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-right: 8px solid #f6f6f6;
+
+        }
+
+        .right {
+            position: relative;
+            top: 150%;
+            left: 50%; /* 调整右侧气泡的位置 */
+            background-color: #e2f5fe;
+            z-index: 6;
+        }
+
+        .right::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            margin-top: -4px;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 8px solid #e2f5fe;
+        }
+
+        .bubble.right::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -8px;
+            margin-top: -4px;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 8px solid #f6f6f6;
+        }
+        #bubble4 {
+            top: calc(75%);
+            left: calc(100%);
+        }
+        #bubble3 {
+            top: calc(65%);
+            left: calc(200%);
+        }
+        #bubble2 {
+            top: calc(75%);
+            left: calc(250%);
+        }
+        #bubble1 {
+            top: calc(65%);
+            left: calc(500%);
+        }
+        
+
     </style>
 </head>
 <body>
+    <button class="return-button">
+        <img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='/shouye.html'">
+        </button>
     <img id="pulse" src="img/music1.png" onclick="changeImage()">
-    <img id="pulse2" src="img/music2.png" onclick="changeImage2()" style="display:none;">
-    <audio id="music" src="music/song.mp3"></audio>
+    <img id="pulse2" src="img/music2.png" style="display:none;">
+    <audio id="music" src="video/music.mp3"></audio>
+    <img id="nvzhongyi" src="img/nvzhongyi.png">
+    <div id="bubble1" class="bubble right" onclick="showNextBubble(this)" style="font-size: large;">
+        <p class="mb-0">好，先生醒醒！</p>
+    </div>
+    <div id="bubble2" class="bubble left" onclick="showNextBubble(this)" style="font-size: large;z-index: 7;">
+        <p class="mb-0">嗯，我睡着了？</p>
+    </div>
+    <div id="bubble3" class="bubble right" onclick="showNextBubble(this)" style="font-size: large;">
+        <p class="mb-0">那我们下次还是这个时间，一般的话我们一到两次疗程，整个睡眠会有一个整体的改善，回到家可以聆听一些你喜欢的古典乐曲。</p>
+    </div>
+    <div id="bubble4" class="bubble left" style="font-size: large;" onclick="goToNextPage()">
+        <p class="mb-0">这次有刷新纪录了，我居然可以睡倒在椅子里。</p>
+    </div>
     <script>
         var isPlaying = false;
+        var currentBubbleIndex = 1;
+        var totalBubbleCount = 4;
 
         function changeImage() {
             var image1 = document.getElementById("pulse");
@@ -40,6 +161,7 @@
                     music.play();
                     isPlaying = true;
                 }
+                showBubble(); // 显示气泡
             } else {
                 image1.style.display = "block";
                 image2.style.display = "none";
@@ -50,26 +172,25 @@
             }
         }
 
-        function changeImage2() {
-            var image1 = document.getElementById("pulse");
-            var image2 = document.getElementById("pulse2");
-            var music = document.getElementById("music");
+        function showBubble() {
+            var bubble1 = document.getElementById("bubble1"); // 获取第一个气泡
+            bubble1.style.display = "block"; // 显示第一个气泡
+        }
 
-            if (image2.style.display !== "none") {
-                image2.style.display = "none";
-                image1.style.display = "block";
-                if (isPlaying) {
-                    music.pause();
-                    isPlaying = false;
-                }
+        function showNextBubble(currentBubble) {
+            var nextBubbleIndex = currentBubbleIndex + 1;
+            var nextBubble = document.getElementById("bubble" + nextBubbleIndex); // 获取下一个气泡
+            if (nextBubbleIndex <= totalBubbleCount) {
+                currentBubble.style.display = "none"; // 隐藏当前气泡
+                nextBubble.style.display = "block"; // 显示下一个气泡
+                currentBubbleIndex = nextBubbleIndex;
             } else {
-                image2.style.display = "block";
-                image1.style.display = "none";
-                if (!isPlaying) {
-                    music.play();
-                    isPlaying = true;
-                }
+                goToNextPage();
             }
+        }
+
+        function goToNextPage() {
+            window.location.href = "xiangnang.html"; // 将下一页的URL替换为你要跳转的页面地址
         }
     </script>
 </body>

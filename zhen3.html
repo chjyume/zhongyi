@@ -6,6 +6,7 @@
 
         <link href="css\zhen1.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="family\font.css">
+		<link rel="stylesheet" type="text/css" href="css/return.css">
 	</head>
 	<style>
 	body
@@ -29,8 +30,10 @@
 	}
 	</style>
 	<body>
-        
-		<div id="conversation" style="height: 520px; margin-right: 45%; overflow-y: scroll;">
+        <button class="return-button">
+			<img src="img/return.png" alt="返回" class="return-image" onclick="window.location.href='/shouye.html'">
+			</button>
+		<div id="conversation" style="height: 520px; margin-right: 45%; overflow-y: scroll;position: relative;">
 			<div class="special-bubble">
 			  <div class="triangle"></div>
 			  <p>香囊区</p>
@@ -44,6 +47,7 @@
 			  <button class="option-button custom-option" onclick="showContent('没想到今时今日我竟然会对一包芍药念念不忘')" data-option="没想到今时今日我竟然会对一包芍药念念不忘">没想到今时今日我竟然会对一包芍药念念不忘</button>
 			</div>
 		  </div>
+		  
 	</body>
 	<script src="js/zhen3.js"></script>
 </html>

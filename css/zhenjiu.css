@@ -110,3 +110,35 @@
     border-bottom: 4px solid transparent;
     border-left: 8px solid #f6f6f6;
 }
+#bubble4 {
+    top: calc(75%);
+    left: calc(180%);
+}
+#bubble3 {
+    top: calc(65%);
+    left: calc(250%);
+}
+#bubble2 {
+    top: calc(75%);
+    left: calc(150%);
+}
+#bubble1 {
+    top: calc(65%);
+    left: calc(300%);
+}
+#tip {
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    border: 1px solid rgb(228, 195, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: rgb(255, 247, 183);
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    writing-mode: horizontal-tb; /* 将文字方向调整为默认的横向显示 */
+    white-space: nowrap;
+    display: none;
+  }

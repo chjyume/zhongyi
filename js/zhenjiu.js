@@ -27,7 +27,20 @@ function drop(event) {
     // 显示中医图案
     var zhongyiImg = document.getElementById("zhongyi");
     zhongyiImg.style.display = "block";
+    // 隐藏tip
+  var tip = document.getElementById("tip");
+  tip.style.display = "none";
 }
+function showTip() {
+  var tip = document.getElementById("tip");
+  tip.style.display = "none";
+  setTimeout(function() {
+    tip.style.display = "block";
+  }, 1000); // 1秒后显示tip
+}
+
+  
+  
 
 function showBubbleAndImage() {
     var bubble1 = document.getElementById("bubble1"); // 获取第一个气泡
@@ -61,5 +74,5 @@ function showFourthBubble() {
     bubble4.classList.remove("hidden"); // 移除隐藏类名，显示第四个气泡
 }
         function goToNextPage() {
-    window.location.href = "下一个页面的URL";
+    window.location.href = "zhen2.html";
 }

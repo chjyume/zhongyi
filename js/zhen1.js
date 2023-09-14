@@ -50,8 +50,8 @@ function showContent(selectedOption) {
 
             // 30秒后跳转到下一页
             setTimeout(function() {
-              window.location.href = "zhnjiu.html"; // 将"next_page.html"替换为您要跳转的页面URL
-            }, 12000);
+              window.location.href = "zhenjiu.html"; // 将"next_page.html"替换为您要跳转的页面URL
+            }, 11000);
           }
         }, 90);
       }
