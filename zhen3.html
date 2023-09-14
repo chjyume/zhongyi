@@ -19,7 +19,14 @@
         left:0;
         top:0;
 	}
-		
+	#pulse{
+		width: 40%;
+		height: 80%;
+		position: fixed;
+		top: calc(30%);
+		left: calc(55%);
+		z-index: 1;
+	}
 	</style>
 	<body>
         
@@ -29,7 +36,7 @@
 			  <p>香囊区</p>
 			</div>
 		  </div>
-		  
+		  <img id="pulse" src="img/zhongyi2.png">
 		  <div class="options-container">
 			<div style="display: flex; flex-direction: column; align-items: center;">
 			  <button class="option-button custom-option" onclick="showContent('啊，这是什么，好香啊')" data-option="啊，这是什么，好香啊">啊，这是什么，好香啊</button>

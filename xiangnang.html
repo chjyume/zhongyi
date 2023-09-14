@@ -9,7 +9,7 @@
     body {
       display: flex;
       justify-content: center;
-      background-color:rgb(248, 235, 213);
+      background-color: rgb(248, 235, 213);
     }
 
     #yao1, #yao2, #yao3 {
@@ -51,6 +51,73 @@
         left: calc(35%);
         z-index: 999;
     }
+    
+      #imageContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 2;
+  }
+
+
+    #imageContainer img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+    }
+    
+    .btn-wrapper {
+      z-index: 2;
+      position: absolute;
+      float: left;
+      line-height: 45px;
+      display: inline-block;
+      margin-right: 2em;
+      text-align: center;
+    }
+
+    #button {
+      stroke-width: 6px;
+      fill: transparent;
+      stroke: #e1b700;
+      stroke-dasharray: 85 400;
+      stroke-dashoffset: -228;
+      transition: 1s all ease;
+      z-index: 999;
+    }
+
+    .btn-wrapper:hover #button {
+      stroke-dasharray: 50 0;
+      stroke-width: 3px;
+      stroke-dashoffset: 0;
+      stroke: #e1b700;
+    }
+
+    #text {
+      margin-top: -60px;
+      text-align: center;
+    }
+
+    #text a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 400;
+    }
+    .btn{
+    display: flex;
+    position: absolute;
+    top: 45%;
+    right: 25%;
+
+}
+
   </style>
 </head>
 <body>
@@ -61,7 +128,17 @@
   <img id="wan2" class="kongwan" src="img/kongwan2.png">
   <div id="tip">点击药材制作香囊</div>
   
-  <img id="newImage" src="img/newImage.png" style="display:none;">
+  
+  <div id="imageContainer"></div>
+
+  <div class="btn" onclick="toggleImage()" style="display:none;">
+    <div class="btn-wrapper"> 
+      <svg height="45" width="150" xmlns="#">
+        <rect id="button" height="45" width="150"></rect>
+      </svg>
+      <div id="text"> <a>生成香囊</a> </div>
+    </div>
+  </div>
   
   <script>
     var yao1 = document.getElementById("yao1");
@@ -70,7 +147,8 @@
     var wan2 = document.getElementById("wan2");
     var currentImage = 1;
     var tip = document.getElementById("tip");
-   
+    var button = document.querySelector(".btn");
+    button.addEventListener("click", showNewImage);
 
     yao1.addEventListener("click", replaceImage);
     yao2.addEventListener("click", replaceImage);
@@ -88,40 +166,40 @@
         currentImage = 1;
         
         // 显示新加的图片
-    var newImage = document.getElementById("newImage");
-    newImage.src = "img/newImage.png";
-    newImage.style.display = "block";
-     // 检查图片是否已放大到阈值，若是则开始动画并跳转到下一页
-        if (newImage.clientWidth >= 1000) {
-          startEnlargeAnimation();
-          setTimeout(function() {
-            window.location.href = "nextPage.html"; // 将 "nextPage.html" 替换为实际的下一页网页地址
-          }, 1000);
-        }
+       /* var newImage = document.getElementById("newImage");
+        newImage.src = "img/newImage.png";
+        newImage.style.display = "block";*/
+        
+        // 显示按钮
+        button.style.display = "block";
       }
       
       tip.style.display = "none";
     }
-    function startEnlargeAnimation() {
-      var width = 0;
-      var height = 0;
-      
-      enlargeTimer = setInterval(function() {
-        width += 10;
-        height += 10;
-        
-        newImage.style.width = width + "px";
-        newImage.style.height = height + "px";
-        
-        if (width >= 1000) {
-          clearInterval(enlargeTimer);
-        }
-      }, 50);
-    }
 
     setTimeout(function() {
       tip.style.display = "block";
-    }, 2000);
+    }, 500);
+    function showNewImage() {
+  // 创建新图片元素
+  var newImage = document.createElement("img");
+  newImage.src = "img/newImage.png";
+  newImage.id = "newImage";
+
+  // 获取图像容器元素
+  var imageContainer = document.getElementById("imageContainer");
+
+  // 添加新图片到图像容器中
+  imageContainer.appendChild(newImage);
+  // 显示图像容器
+  imageContainer.style.display = "flex";
+  setTimeout(function() {
+    window.location.href = "zhen3.html";
+  }, 3000);
+}
+
+    
+    
   </script>
 </body>
 </html>

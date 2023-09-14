@@ -1,24 +1,76 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <meta charset="utf-8" />
-		<title>帮我针灸</title>
-
-        <link href="css\music.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" type="text/css" href="family\font.css">
-	</head>
-	<style>
-	
+<head>
+    <meta charset="utf-8">
+    <title>点击图片替换和音乐播放</title>
+    <style>
         body {
-            background-image: url("img/jiu1.png");
             background-repeat: no-repeat;
             background-size: cover;
             position: absolute;
             left: 0;
             top: 0;
         }
+        #pulse {
+            width: 55%;
+            height: 65%;
+            position: fixed;
+            top: calc(35%);
+            left: calc(0%);
+            z-index: 1;
+        }
     </style>
-    <body>
-        <img id="pulse" src="img/zhenjiu2.png">
-    </body>
-	
+</head>
+<body>
+    <img id="pulse" src="img/music1.png" onclick="changeImage()">
+    <img id="pulse2" src="img/music2.png" onclick="changeImage2()" style="display:none;">
+    <audio id="music" src="music/song.mp3"></audio>
+    <script>
+        var isPlaying = false;
+
+        function changeImage() {
+            var image1 = document.getElementById("pulse");
+            var image2 = document.getElementById("pulse2");
+            var music = document.getElementById("music");
+
+            if (image1.style.display !== "none") {
+                image1.style.display = "none";
+                image2.style.display = "block";
+                if (!isPlaying) {
+                    music.play();
+                    isPlaying = true;
+                }
+            } else {
+                image1.style.display = "block";
+                image2.style.display = "none";
+                if (isPlaying) {
+                    music.pause();
+                    isPlaying = false;
+                }
+            }
+        }
+
+        function changeImage2() {
+            var image1 = document.getElementById("pulse");
+            var image2 = document.getElementById("pulse2");
+            var music = document.getElementById("music");
+
+            if (image2.style.display !== "none") {
+                image2.style.display = "none";
+                image1.style.display = "block";
+                if (isPlaying) {
+                    music.pause();
+                    isPlaying = false;
+                }
+            } else {
+                image2.style.display = "block";
+                image1.style.display = "none";
+                if (!isPlaying) {
+                    music.play();
+                    isPlaying = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
